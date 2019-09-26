@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddCourse">
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:id="@+id/course_name"
+        app:mtf_cardCollapsedHeight="4dp"
+        app:mtf_image="@drawable/plus"
+        app:mtf_animationDuration="1000"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:mtf_labelColor="#112E4E"
+        app:mtf_openKeyboardOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    <EditText
+        android:id="@+id/e_course_name"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="course name"
+        android:textColor="#000000"
+        android:textSize="18dp"
+       />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:id="@+id/shortcode"
+
+        app:mtf_cardCollapsedHeight="4dp"
+         app:mtf_animationDuration="1000"
+        android:layout_marginTop="4dp"
+
+        app:mtf_labelColor="#112E4E"
+        app:mtf_openKeyboardOnFocus="true"
+        app:layout_constraintStart_toStartOf="@+id/course_name"
+        app:layout_constraintTop_toBottomOf="@+id/course_name">
+    <EditText
+        android:id="@+id/e_shortcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Short Code"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:maxLength="4"
+      />
+    </com.github.florent37.materialtextfield.MaterialTextField>
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:id="@+id/teacher"
+
+        app:mtf_cardCollapsedHeight="4dp"
+         app:mtf_animationDuration="1000"
+        app:layout_constraintEnd_toEndOf="@+id/course_name"
+        app:layout_constraintStart_toStartOf="@+id/shortcode"
+        app:layout_constraintTop_toBottomOf="@+id/shortcode"
+        app:mtf_labelColor="#112E4E"
+        app:mtf_openKeyboardOnFocus="true"
+        android:layout_marginTop="4dp"
+        >
+
+    <EditText
+        android:id="@+id/e_teacher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Teacher"
+        android:textColor="#000000"
+        android:textSize="18dp"
+         />
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:id="@+id/location"
+
+        app:mtf_cardCollapsedHeight="4dp"
+         app:mtf_animationDuration="1000"
+
+        app:mtf_labelColor="#112E4E"
+        app:mtf_openKeyboardOnFocus="true"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/teacher"
+        app:layout_constraintStart_toStartOf="@+id/teacher"
+        app:layout_constraintTop_toBottomOf="@+id/teacher">
+    <EditText
+        android:id="@+id/e_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Location"
+        android:textColor="#000000"
+        android:textSize="18dp"
+       />
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:id="@+id/details"
+
+        app:mtf_cardCollapsedHeight="4dp"
+         app:mtf_animationDuration="1000"
+        android:background="@drawable/rectangle"
+
+        app:mtf_labelColor="#112E4E"
+        app:mtf_openKeyboardOnFocus="true"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/location"
+        app:layout_constraintStart_toStartOf="@+id/location"
+        app:layout_constraintTop_toBottomOf="@+id/location" >
+    <EditText
+        android:id="@+id/e_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="left|top"
+        android:hint="Details"
+        android:textColor="#000000"
+        android:textSize="18dp"
+/>
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginEnd="16dp"
+        android:id="@+id/frame_save"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_anchorGravity="bottom|right|end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:elevation="16dp"
+            android:text="Save"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#112E4E"
+            android:contentDescription="Save"
+            android:src="@android:color/transparent"
+            android:text="Save" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
