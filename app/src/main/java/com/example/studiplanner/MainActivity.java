@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -20,8 +21,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        btnTasks = findViewById(R.id.btnTasks);
+        SharedPrefrenceCourse sharedPrefrenceCourse = null;
+        sharedPrefrenceCourse.getInstance().sh= getSharedPreferences("key", Context.MODE_PRIVATE);
+        sharedPrefrenceCourse.getInstance().ed= sharedPrefrenceCourse.getInstance().sh.edit();
+         btnTasks = findViewById(R.id.btnTasks);
         btnTime = findViewById(R.id.btnTime);
         btnCourses = findViewById(R.id.courses);
 
