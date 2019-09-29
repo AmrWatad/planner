@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".task.AddTask">
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:id="@+id/task_name"
+        app:mtf_cardCollapsedHeight="4dp"
+        app:mtf_image="@drawable/plus"
+        app:mtf_animationDuration="1000"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:mtf_labelColor="#112E4E"
+        app:mtf_openKeyboardOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    <EditText
+        android:id="@+id/e_task_name"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="Task"
+        android:textColor="#000000"
+        android:textSize="18dp"
+       />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:id="@+id/details"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/task_name"
+        app:layout_constraintStart_toStartOf="@+id/task_name"
+        app:layout_constraintTop_toBottomOf="@+id/task_name"
+        app:mtf_animationDuration="1000"
+        app:mtf_cardCollapsedHeight="4dp"
+        app:mtf_labelColor="#112E4E"
+        app:mtf_openKeyboardOnFocus="true">
+
+        <EditText
+            android:id="@+id/e_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left|top"
+            android:hint="Details"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginEnd="16dp"
+        android:id="@+id/frame_save"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_anchorGravity="bottom|right|end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:elevation="16dp"
+            android:text="Save"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#112E4E"
+            android:contentDescription="Save"
+            android:src="@android:color/transparent"
+            android:text="Save" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/t_course"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:text="Course"
+        android:textSize="18dp"
+
+        app:layout_constraintStart_toStartOf="@+id/details"
+        app:layout_constraintTop_toBottomOf="@+id/details" />
+
+    <TextView
+        android:id="@+id/add_date"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:text="Add reminder"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="@+id/t_course"
+        app:layout_constraintTop_toBottomOf="@+id/t_course" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

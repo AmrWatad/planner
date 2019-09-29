@@ -10,13 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.studiplanner.AddCourse;
+import com.example.studiplanner.course.AddCourse;
 import com.example.studiplanner.R;
 import com.example.studiplanner.course.CourseView;
 import com.example.studiplanner.course.CoursesBaseAdapter;

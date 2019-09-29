@@ -1,8 +1,6 @@
-package com.example.studiplanner;
+package com.example.studiplanner.course;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,11 +9,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
-import com.example.studiplanner.course.CourseView;
-import com.example.studiplanner.course.CoursesBaseAdapter;
-import com.example.studiplanner.fragments.Courses;
-
-import java.util.ArrayList;
+import com.example.studiplanner.R;
 
 import static com.example.studiplanner.fragments.Courses.adapter;
 import static com.example.studiplanner.fragments.Courses.courses;

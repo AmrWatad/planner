@@ -8,18 +8,56 @@
     android:background="?attr/selectableItemBackground"
 
     >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/cns_task"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/down"
+        app:layout_constraintBottom_toBottomOf="@+id/t_task_name"
+        app:layout_constraintStart_toEndOf="@+id/t_task_name"
+        app:layout_constraintTop_toTopOf="@+id/t_task_name"></ImageView>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/t_task_name"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center|left"
+        android:text="My Tasks"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ListView
+        android:id="@+id/lv_tasks"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="289dp"
-        android:layout_marginBottom="423dp"
-        android:text="tasks"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="24dp"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/cns_task" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/text"
+        app:layout_constraintEnd_toEndOf="@+id/text"
+        app:srcCompat="@drawable/pen" />
 </androidx.constraintlayout.widget.ConstraintLayout>
