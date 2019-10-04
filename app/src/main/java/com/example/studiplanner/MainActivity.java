@@ -50,7 +50,10 @@ public class MainActivity extends AppCompatActivity {
         prefsEditor.putString("textViews", arrayToString(textViews));
         prefsEditor.commit();
         Toast.makeText(getApplicationContext(),courses.get(0).getTitle()+",Destroy",Toast.LENGTH_LONG).show();
-
+        Intent intent = new Intent(this, NotificationService.class);
+        intent.putExtra("courses",arrayToString(courses));
+        //startActivity(intent);
+        startService(intent);
     }
 
     @Override
@@ -165,7 +168,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        startService(new Intent(this, NotificationService.class));
+        Intent intent = new Intent(this, NotificationService.class);
+        intent.putExtra("courses",arrayToString(courses));
+        //startActivity(intent);
+        startService(intent);
+       // startService(new Intent(this, NotificationService.class));
     }
     public static <T> String arrayToString(List<T> list) {
         Gson g = new Gson();
