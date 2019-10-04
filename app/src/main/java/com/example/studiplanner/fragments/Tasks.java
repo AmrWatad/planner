@@ -34,7 +34,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
-import static com.example.studiplanner.task.BottomSheetFragment.tasks;
+import static com.example.studiplanner.MainActivity.tasks;
+//import static com.example.studiplanner.task.BottomSheetFragment.tasks;
 
 public class Tasks extends Fragment {
     ConstraintLayout constraintLayout;

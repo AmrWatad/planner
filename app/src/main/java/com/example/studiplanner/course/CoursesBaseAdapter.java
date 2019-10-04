@@ -18,7 +18,10 @@ import androidx.annotation.RequiresApi;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.example.studiplanner.R;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -67,6 +70,8 @@ public class CoursesBaseAdapter extends BaseAdapter {
             holder.image = convertView.findViewById(R.id.item_course_image);
             holder.title = convertView.findViewById(R.id.item_course_title);
             holder.remove = convertView.findViewById(R.id.remove_item);
+            holder.rating = convertView.findViewById(R.id.t_rating);
+            holder.date = convertView.findViewById(R.id.t_date);
             convertView.setTag(holder);
         } else {
             holder = (CourseViewHolder) convertView.getTag();
@@ -74,6 +79,8 @@ public class CoursesBaseAdapter extends BaseAdapter {
         }
         CourseView course = getItem(position);
         holder.title.setText(course.getTitle());
+        holder.rating.setText(course.getRating()+"/10");
+        holder.date.setText(course.getDate());
 
         TextDrawable drawable = TextDrawable.builder()
                 .buildRound(course.getShortTitle(), course.getColor());
@@ -91,7 +98,7 @@ public class CoursesBaseAdapter extends BaseAdapter {
 
     public static class CourseViewHolder {
         public ImageView remove, image;
-        public TextView title;
+        public TextView title,date,rating;
     }
 
     private void creatPopUp(int position) {
@@ -124,4 +131,6 @@ public class CoursesBaseAdapter extends BaseAdapter {
             }
         });
     }
+
+
 }

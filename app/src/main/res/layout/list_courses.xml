@@ -14,35 +14,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_task_name" />
-
-    <TextView
-        android:id="@+id/t_task_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:gravity="center"
-        android:text="courses"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toStartOf="@+id/switchgit"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.github.angads25.toggle.widget.LabeledSwitch
-        android:id="@+id/switchgit"
-        android:layout_width="130dp"
-        android:layout_height="36dp"
-        android:layout_margin="16dp"
-        android:textSize="14sp"
-        app:colorBorder="@color/colorAccent"
-        app:layout_constraintBottom_toBottomOf="@+id/t_task_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/t_task_name"
-        app:on="false"
-        app:textOff="rating"
-        app:textOn="Exams" />
+
+
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

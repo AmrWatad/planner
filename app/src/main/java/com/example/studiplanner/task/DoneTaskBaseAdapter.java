@@ -16,10 +16,11 @@ import com.example.studiplanner.R;
 
 import java.util.ArrayList;
 
+import static com.example.studiplanner.MainActivity.tasks;
 import static com.example.studiplanner.fragments.Tasks.adapter1;
 import static com.example.studiplanner.fragments.Tasks.mListView1;
 import static com.example.studiplanner.task.BottomSheetFragment.mListViewTask;
-import static com.example.studiplanner.task.BottomSheetFragment.tasks;
+//import static com.example.studiplanner.task.BottomSheetFragment.tasks;
 
 
 public class DoneTaskBaseAdapter extends BaseAdapter {

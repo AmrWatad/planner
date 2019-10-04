@@ -2,6 +2,7 @@ package com.example.studiplanner.course;
 
 import android.graphics.Color;
 
+import java.util.Date;
 import java.util.Random;
 
 public class CourseView {
@@ -10,6 +11,37 @@ public class CourseView {
     private String teacher;
     private String location;
     private String details;
+
+    public Date getDateFormat() {
+        return dateFormat;
+    }
+
+    public void setDateFormat(Date dateFormat) {
+        this.dateFormat = dateFormat;
+    }
+
+    Date dateFormat;
+
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    private String date;
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    private String rating;
 
     public int getColor() {
         return color;
@@ -24,7 +56,7 @@ public class CourseView {
     public CourseView() {
     }
 
-    public CourseView(String title, String shortTitle, String teacher, String location, String details) {
+    public CourseView(String title, String shortTitle, String teacher, String location, String details, String rating, String date, Date dateFormat) {
         this.title = title;
         if (title.length() <= 5)
             this.shortTitle = title;
@@ -35,7 +67,9 @@ public class CourseView {
         this.location = location;
         this.details = details;
         setColor();
-
+        this.rating = rating;
+        this.date = date;
+        this.dateFormat = dateFormat;
     }
 
     private void setColor() {

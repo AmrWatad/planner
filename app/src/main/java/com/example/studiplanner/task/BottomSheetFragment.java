@@ -20,13 +20,13 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.studiplanner.MainActivity.tasks_done;
 import static com.example.studiplanner.fragments.Tasks.taskName;
 
 public class BottomSheetFragment extends BottomSheetDialogFragment {
   Context context;
     public static ListView mListViewTask;
-    public static List<TaskView> tasks  = new ArrayList<>();
-    public static List<TaskView> tasks_done  = new ArrayList<>();
+
     public static DoneTaskBaseAdapter  adapterTask;
     public BottomSheetFragment() {
 

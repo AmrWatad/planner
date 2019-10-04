@@ -7,45 +7,114 @@
     android:layout_height="match_parent">
 
 
-    <Button
+    <LinearLayout
         android:id="@+id/btnTasks"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
         android:layout_marginBottom="8dp"
-        android:text="Tasks"
+        android:background="@drawable/rectangle"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnTime"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
+        <ImageView
+            android:id="@+id/ibtnTasks"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/task_button_selector"
+
+            android:state_selected="true"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+
+            android:text="Tasks" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/btnTime"
+
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text=" Timetable"
+        android:layout_height="30dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:background="@drawable/rectangle"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/btnTasks"
         app:layout_constraintEnd_toStartOf="@+id/courses"
         app:layout_constraintStart_toEndOf="@+id/btnTasks"
-        app:layout_constraintTop_toTopOf="@+id/btnTasks" />
+        app:layout_constraintTop_toTopOf="@+id/btnTasks">
 
-    <Button
+        <ImageView
+            android:id="@+id/ibtnTime"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/time_table_button_selector"
+
+            android:state_selected="false"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            android:text="TimeTable" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/courses"
+
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Courses"
+        android:layout_height="30dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:background="@drawable/rectangle"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/btnTime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnTime"
-        app:layout_constraintTop_toTopOf="@+id/btnTime" />
+        app:layout_constraintTop_toTopOf="@+id/btnTime">
+
+        <ImageView
+            android:id="@+id/icourses"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/course_button_selector"
+
+            android:state_selected="false"
+            android:text="Courses"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Courses" />
+
+
+    </LinearLayout>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

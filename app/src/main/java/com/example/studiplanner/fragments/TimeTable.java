@@ -27,11 +27,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static android.content.ContentValues.TAG;
-import static com.example.studiplanner.fragments.Courses.courses;
+import static com.example.studiplanner.MainActivity.courses;
+import static com.example.studiplanner.MainActivity.textViews;
+//import static com.example.studiplanner.fragments.Courses.courses;
 
 public class TimeTable extends Fragment {
     TableLayout tableLayout;
-    static HashMap<Integer, CourseView> textViews = new HashMap();
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -94,7 +95,7 @@ public class TimeTable extends Fragment {
         CoursesBaseAdapter adapter;
         LayoutInflater layoutInflater = LayoutInflater.from(getContext());
 
-        popupInputDialogView = layoutInflater.inflate(R.layout.fragment_courses, null);
+        popupInputDialogView = layoutInflater.inflate(R.layout.list_courses, null);
 
         mListView = popupInputDialogView.findViewById(R.id.courses_lv);
         // mListView.
@@ -106,13 +107,7 @@ public class TimeTable extends Fragment {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                /* Toast.makeText(view.getContext(), *//*dataSources*//*courses.get(i).getTitle(), Toast.LENGTH_LONG).show();
-                Bundle bundle = new Bundle();
-                bundle.putString("msg", "edit");
-                bundle.putInt("position", i);
-                Intent in=new Intent(getActivity(), AddCourse.class);
-                in.putExtra("xy", bundle);
-                startActivity(in);*/
+
                 TextDrawable drawable = TextDrawable.builder()
                         .buildRect(courses.get(i).getShortTitle(), courses.get(i).getColor());
                 if (textView instanceof TextView) {

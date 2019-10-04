@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".task.AddTask">
+
+
+
     <com.github.florent37.materialtextfield.MaterialTextField
         android:layout_width="0dp"
         android:layout_height="100dp"
@@ -58,6 +61,7 @@
             android:hint="Details"
             android:textColor="#000000"
             android:textSize="18dp" />
+
     </com.github.florent37.materialtextfield.MaterialTextField>
 
     <FrameLayout
@@ -99,18 +103,57 @@
         android:layout_marginTop="8dp"
         android:text="Course"
         android:textSize="18dp"
-
+android:gravity="center"
         app:layout_constraintStart_toStartOf="@+id/details"
         app:layout_constraintTop_toBottomOf="@+id/details" />
+
+
+    <TextView
+        android:id="@+id/t_course_view"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/rectangle_background"
+        android:gravity="center"
+        android:text=""
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/t_course"
+        app:layout_constraintEnd_toEndOf="@+id/details"
+        app:layout_constraintStart_toEndOf="@+id/t_course"
+        app:layout_constraintTop_toTopOf="@+id/t_course" />
+
+  <!--  <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/t_course_view"
+        app:layout_constraintTop_toTopOf="@+id/t_course_view"
+        app:srcCompat="@android:drawable/btn_dialog" />-->
 
     <TextView
         android:id="@+id/add_date"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:text="Add reminder"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="@+id/t_course"
         app:layout_constraintTop_toBottomOf="@+id/t_course" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+         android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/add_date"
+        app:layout_constraintStart_toEndOf="@+id/add_date" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

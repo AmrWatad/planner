@@ -18,11 +18,12 @@ import com.example.studiplanner.course.CourseView;
 
 import java.util.ArrayList;
 
+import static com.example.studiplanner.MainActivity.tasks_done;
 import static com.example.studiplanner.fragments.Courses.adapter;
 import static com.example.studiplanner.fragments.Tasks.adapter1;
 import static com.example.studiplanner.fragments.Tasks.mListView1;
 import static com.example.studiplanner.task.BottomSheetFragment.mListViewTask;
-import static com.example.studiplanner.task.BottomSheetFragment.tasks_done;
+//import static com.example.studiplanner.task.BottomSheetFragment.tasks_done;
 
 
 public class TaskBaseAdapter extends BaseAdapter {
@@ -66,12 +67,16 @@ public class TaskBaseAdapter extends BaseAdapter {
             holder = new CourseViewHolder();
             holder.title = convertView.findViewById(R.id.item_task_title);
             holder.isDone = convertView.findViewById(R.id.remove_done_item);
+            holder.task_course = convertView.findViewById(R.id.task_course);
+            holder.date = convertView.findViewById(R.id.task_date);
             convertView.setTag(holder);
         } else {
             holder = (CourseViewHolder) convertView.getTag();
         }
         TaskView course = getItem(position);
         holder.title.setText(course.getName());
+        holder.task_course.setText(course.getCourse());
+        holder.date.setText(course.getDate());
         holder.isDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,7 +89,7 @@ public class TaskBaseAdapter extends BaseAdapter {
 
     public static class CourseViewHolder {
         public ImageView isDone;
-        public TextView title;
+        public TextView title,task_course,date;
     }
     private void creatPopUp(int position) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
