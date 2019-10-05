@@ -53,12 +53,12 @@ public class Courses extends Fragment  {
             @Override
             public void onClick(View view) {
                 if (aSwitch.isOn()){
-                    Toast.makeText(getContext(),"Rating",Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getContext(),"Rating",Toast.LENGTH_LONG).show();
                     if(tasks!=null)
                         Collections.sort(courses, new Courses.CustomComparatorRating());
                 }
                 else{
-                    Toast.makeText(getContext(),"Exams",Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getContext(),"Exams",Toast.LENGTH_LONG).show();
                     Collections.sort(courses, new Courses.CustomComparatorDate());
 
                 }

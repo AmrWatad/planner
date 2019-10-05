@@ -62,7 +62,7 @@ public class AddCourse extends AppCompatActivity {
             details.setText(cr.getDetails());
             rating.setText(cr.getRating());
             date.setText(cr.getDate());
-            Toast.makeText(getBaseContext(),"edit="+position,Toast.LENGTH_LONG).show();
+           // Toast.makeText(getBaseContext(),"edit="+position,Toast.LENGTH_LONG).show();
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -89,7 +89,7 @@ public class AddCourse extends AppCompatActivity {
             });
         }
         else {
-            Toast.makeText(getBaseContext(),"noot edit!!",Toast.LENGTH_LONG).show();
+            //Toast.makeText(getBaseContext(),"noot edit!!",Toast.LENGTH_LONG).show();
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

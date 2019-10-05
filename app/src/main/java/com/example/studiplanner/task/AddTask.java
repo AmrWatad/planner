@@ -84,7 +84,7 @@ public class AddTask extends AppCompatActivity {
             TaskView taskView=tasks.get(position);
             task.setText(taskView.getName());
              details.setText(taskView.getDetails());
-            Toast.makeText(getBaseContext(),"edit="+position,Toast.LENGTH_LONG).show();
+           // Toast.makeText(getBaseContext(),"edit="+position,Toast.LENGTH_LONG).show();
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -108,7 +108,7 @@ public class AddTask extends AppCompatActivity {
             });
         }
         else {
-            Toast.makeText(getBaseContext(),"noot edit!!",Toast.LENGTH_LONG).show();
+           // Toast.makeText(getBaseContext(),"noot edit!!",Toast.LENGTH_LONG).show();
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -199,7 +199,9 @@ public class AddTask extends AppCompatActivity {
 
         @Override
         public int compare(TaskView t1, TaskView t2) {
+            if(t1.getDateFormat()!=null&&t2.getDateFormat()!=null)
             return t1.getDateFormat().compareTo(t2.getDateFormat());
+            return 1;
         }
     }
 
