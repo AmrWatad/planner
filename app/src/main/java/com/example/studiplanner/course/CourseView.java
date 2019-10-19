@@ -11,6 +11,26 @@ public class CourseView {
     private String teacher;
     private String location;
     private String details;
+    private double points;
+    private int grade;
+
+
+
+    public double getPoints() {
+        return points;
+    }
+
+    public void setPoints(double points) {
+        this.points = points;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
 
     public Date getDateFormat() {
         return dateFormat;
@@ -56,7 +76,8 @@ public class CourseView {
     public CourseView() {
     }
 
-    public CourseView(String title, String shortTitle, String teacher, String location, String details, String rating, String date, Date dateFormat) {
+    public CourseView(String title, String shortTitle, String teacher, String location, String details,
+                      String rating, String date, Date dateFormat ,String grade, String points) {
         this.title = title;
         if (title.length() <= 5)
             this.shortTitle = title;
@@ -70,6 +91,8 @@ public class CourseView {
         this.rating = rating;
         this.date = date;
         this.dateFormat = dateFormat;
+        this.grade=Integer.parseInt(grade);
+        this.points=Double.parseDouble(points);
     }
 
     private void setColor() {

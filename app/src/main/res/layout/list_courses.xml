@@ -20,6 +20,7 @@
 
 
 
+<!--
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -32,4 +33,36 @@
         app:layout_constraintBottom_toBottomOf="@+id/courses_lv"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/plus2" />
+-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/t_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/remove" />
+
+   <!-- <TextView
+        android:id="@+id/t_remove"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/rectangle_background"
+        android:gravity="center"
+        android:text="Remove"
+        app:layout_constraintBottom_toTopOf="@+id/courses_lv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,9 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-        <EditText
+        <com.github.florent37.materialtextfield.MaterialTextField
             android:id="@+id/e_grade"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+
+            android:layout_marginTop="4dp"
+           app:mtf_animationDuration="1000"
+            app:mtf_cardCollapsedHeight="4dp"
+            app:mtf_labelColor="#112E4E"
+            app:layout_constraintStart_toStartOf="@+id/lecture_hours"
+            app:layout_constraintTop_toBottomOf="@+id/lecture_hours"
+            app:mtf_openKeyboardOnFocus="true">
+        <EditText
+            android:id="@+id/ee_grade"
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:gravity="left|top"
@@ -20,8 +31,33 @@
             android:inputType="number"
             android:textColor="#000000"
             android:textSize="18dp"
-            app:layout_constraintStart_toStartOf="@+id/lecture_hours"
-            app:layout_constraintTop_toBottomOf="@+id/lecture_hours" />
+        />
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:id="@+id/e_point"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            app:layout_constraintStart_toEndOf="@+id/e_grade"
+            app:layout_constraintTop_toTopOf="@+id/e_grade"
+            app:mtf_animationDuration="1000"
+            app:mtf_cardCollapsedHeight="4dp"
+            app:mtf_labelColor="#112E4E"
+            app:mtf_openKeyboardOnFocus="true">
+
+            <EditText
+                android:id="@+id/ee_points"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:gravity="left|top"
+                android:hint="Grade"
+                android:inputType="number"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+        </com.github.florent37.materialtextfield.MaterialTextField>
 
         <FrameLayout
             android:id="@+id/frame_save"
@@ -96,13 +132,11 @@
             app:layout_constraintTop_toTopOf="parent"
             app:mtf_animationDuration="1000"
             app:mtf_cardCollapsedHeight="4dp"
-            app:mtf_image="@drawable/plus"
-            app:mtf_labelColor="#112E4E"
+             app:mtf_labelColor="#112E4E"
             app:mtf_openKeyboardOnFocus="true">
 
             <EditText
                 android:id="@+id/e_course_name"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 

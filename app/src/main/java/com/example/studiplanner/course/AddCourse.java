@@ -25,7 +25,7 @@ import static com.example.studiplanner.fragments.Courses.adapter;
 import static com.example.studiplanner.fragments.Courses.mListView;
 
 public class AddCourse extends AppCompatActivity {
-        EditText course,shortCode,techer,location,details,rating;
+        EditText course,shortCode,techer,location,details,rating,grade,points;
                 TextView dateClick,date;
     FrameLayout save;
     @Override
@@ -41,6 +41,8 @@ public class AddCourse extends AppCompatActivity {
         rating=findViewById(R.id.e_rating);
         dateClick=findViewById(R.id.e_exam_date);
         date=findViewById(R.id.e_exam_date_result);
+        grade=findViewById(R.id.ee_grade);
+        points=findViewById(R.id.ee_points);
         dateClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,14 +64,22 @@ public class AddCourse extends AppCompatActivity {
             details.setText(cr.getDetails());
             rating.setText(cr.getRating());
             date.setText(cr.getDate());
+            grade.setText(cr.getGrade()+"");
+            points.setText(cr.getPoints()+"");
            // Toast.makeText(getBaseContext(),"edit="+position,Toast.LENGTH_LONG).show();
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(course.getText().toString().isEmpty())
-                        Toast.makeText(getBaseContext(),"write course name!",Toast.LENGTH_LONG).show();
+                    if(!grade.getText().toString().isEmpty() && points.getText().toString().isEmpty())
+                        Toast.makeText(getBaseContext(),"write points of course  !",Toast.LENGTH_LONG).show();
+                    if (course.getText().toString().isEmpty())
+                        Toast.makeText(getBaseContext(), "write course name!", Toast.LENGTH_LONG).show();
                     else{
                         courses.get(position).setTitle(course.getText().toString());
+
+                        courses.get(position).setGrade(Integer.parseInt(grade.getText().toString()));
+                        courses.get(position).setPoints(Double.parseDouble(points.getText().toString()));
+
                         courses.get(position).setDetails(details.getText().toString());
                         courses.get(position).setShortTitle(shortCode.getText().toString());
                         courses.get(position).setTeacher(techer.getText().toString());
@@ -88,7 +98,7 @@ public class AddCourse extends AppCompatActivity {
                 }
             });
         }
-        else {
+        else  {
             //Toast.makeText(getBaseContext(),"noot edit!!",Toast.LENGTH_LONG).show();
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -97,7 +107,10 @@ public class AddCourse extends AppCompatActivity {
                         Toast.makeText(getBaseContext(),"write course name!",Toast.LENGTH_LONG).show();
                     else{
                         courses.add(new CourseView(course.getText().toString(),shortCode.getText().toString()
-                                ,techer.getText().toString(),location.getText().toString(),details.getText().toString(),rating.getText().toString(),date.getText().toString(),dateformat));
+                                ,techer.getText().toString()
+                                ,location.getText().toString(),details.getText().toString(),
+                                rating.getText().toString(),date.getText().toString(),
+                                dateformat,grade.getText().toString(),points.getText().toString()));
                         mListView.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
                         if ( getFragmentManager().getBackStackEntryCount() > 0)

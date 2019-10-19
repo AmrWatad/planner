@@ -22,6 +22,7 @@ import com.amulyakhare.textdrawable.TextDrawable;
 import com.example.studiplanner.R;
 import com.example.studiplanner.course.CourseView;
 import com.example.studiplanner.course.CoursesBaseAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,6 +45,7 @@ public class TimeTable extends Fragment {
             TextDrawable drawable = TextDrawable.builder()
                     .buildRect(i.getValue().getShortTitle(), i.getValue().getColor());
             TextView textView = v.findViewById(i.getKey());
+            if (drawable!=null && textView!=null)
             textView.setBackground(drawable);
         });
         onTable();
@@ -98,7 +100,21 @@ public class TimeTable extends Fragment {
         popupInputDialogView = layoutInflater.inflate(R.layout.list_courses, null);
 
         mListView = popupInputDialogView.findViewById(R.id.courses_lv);
-        // mListView.
+        FloatingActionButton remove=popupInputDialogView.findViewById(R.id.t_remove);
+        remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (textView instanceof TextView) {
+                    TextView viewText = (TextView) textView;
+                    viewText.setText("");
+                    viewText.setBackgroundColor(getResources().getColor(R.color.white));
+                    textViews.remove(viewText.getId());
+                    alertDialog.dismiss();
+                }
+            }
+        });
+
+                // mListView.
         mListView.setLayoutParams(new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, 600));
 
         adapter = new CoursesBaseAdapter(getActivity(), (ArrayList<CourseView>) courses/*dataSources*/);

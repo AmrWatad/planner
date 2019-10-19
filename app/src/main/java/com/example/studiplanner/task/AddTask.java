@@ -16,7 +16,6 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
@@ -27,6 +26,7 @@ import com.example.studiplanner.DatePickerFragment;
 import com.example.studiplanner.R;
 import com.example.studiplanner.course.CourseView;
 import com.example.studiplanner.course.CoursesBaseAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -131,7 +131,6 @@ public class AddTask extends AppCompatActivity {
 
 
     }
-
     private void creatPopUp() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setCancelable(true);
@@ -143,15 +142,17 @@ public class AddTask extends AppCompatActivity {
         //alertDialog.getWindow().setLayout(600, 800);
         alertDialog.show();
     }
-
     private void initPopUp( ) {
         ListView mListView;
         CoursesBaseAdapter adapter;
         LayoutInflater layoutInflater = LayoutInflater.from(this);
 
-        popupInputDialogView = layoutInflater.inflate(R.layout.fragment_courses, null);
+        popupInputDialogView = layoutInflater.inflate(R.layout.list_courses, null);
 
         mListView = popupInputDialogView.findViewById(R.id.courses_lv);
+        FloatingActionButton remove=popupInputDialogView.findViewById(R.id.t_remove);
+        remove.setVisibility(View.INVISIBLE);
+
         // mListView.
         mListView.setLayoutParams(new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, 600));
 
@@ -172,7 +173,6 @@ public class AddTask extends AppCompatActivity {
         });
 
     }
-
     Date dateformat = null;
     DatePickerDialog.OnDateSetListener onDate = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -193,7 +193,6 @@ public class AddTask extends AppCompatActivity {
 
          }
     };
-
     public class CustomComparator implements Comparator<TaskView> {
 
 
