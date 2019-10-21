@@ -14,7 +14,6 @@
             android:id="@+id/e_grade"
             android:layout_width="0dp"
             android:layout_height="100dp"
-
             android:layout_marginTop="4dp"
            app:mtf_animationDuration="1000"
             app:mtf_cardCollapsedHeight="4dp"
@@ -28,6 +27,7 @@
             android:layout_height="40dp"
             android:gravity="left|top"
             android:hint="Grade"
+
             android:inputType="number"
             android:textColor="#000000"
             android:textSize="18dp"
@@ -53,7 +53,8 @@
                 android:layout_width="70dp"
                 android:layout_height="40dp"
                 android:gravity="left|top"
-                android:hint="Grade"
+                android:hint="Points"
+
                 android:inputType="number"
                 android:textColor="#000000"
                 android:textSize="18dp" />
@@ -221,12 +222,9 @@
         <com.github.florent37.materialtextfield.MaterialTextField
             android:id="@+id/details"
             android:layout_width="0dp"
-            android:layout_height="100dp"
-
+            android:layout_height="150dp"
             android:layout_marginTop="4dp"
-            android:background="@drawable/rectangle"
             app:layout_constraintEnd_toEndOf="@+id/location"
-
             app:layout_constraintStart_toStartOf="@+id/location"
             app:layout_constraintTop_toBottomOf="@+id/location"
             app:mtf_animationDuration="1000"
@@ -240,8 +238,9 @@
                 android:layout_height="match_parent"
                 android:gravity="left|top"
                 android:hint="Details"
+                android:background="@drawable/rectangle"
                 android:textColor="#000000"
-                android:textSize="18dp" />
+                android:textSize="16dp" />
         </com.github.florent37.materialtextfield.MaterialTextField>
 
 
@@ -249,10 +248,8 @@
             android:id="@+id/lecture_hours"
             android:layout_width="0dp"
             android:layout_height="100dp"
-
             android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="@+id/details"
-
             app:layout_constraintStart_toStartOf="@+id/details"
             app:layout_constraintTop_toBottomOf="@+id/details"
             app:mtf_animationDuration="1000"

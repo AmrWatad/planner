@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -17,10 +18,13 @@ import androidx.fragment.app.Fragment;
 
 import com.example.studiplanner.course.AddCourse;
 import com.example.studiplanner.R;
+import com.example.studiplanner.course.BottomSheetFragment_Course;
 import com.example.studiplanner.course.CourseView;
 import com.example.studiplanner.course.CoursesBaseAdapter;
 import com.example.studiplanner.task.AddTask;
+import com.example.studiplanner.task.BottomSheetFragment;
 import com.github.angads25.toggle.widget.LabeledSwitch;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -59,6 +63,7 @@ public class Courses extends Fragment  {
                 }
                 else{
                    // Toast.makeText(getContext(),"Exams",Toast.LENGTH_LONG).show();
+
                     Collections.sort(courses, new Courses.CustomComparatorDate());
 
                 }
@@ -95,7 +100,7 @@ public class Courses extends Fragment  {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
       }
-
+    private  int position=0;
     public void initListView() {
            mListView = v.findViewById(R.id.courses_lv);
            adapter = new CoursesBaseAdapter(getActivity(), (ArrayList<CourseView>) courses/*dataSources*/);
@@ -103,17 +108,27 @@ public class Courses extends Fragment  {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(view.getContext(), /*dataSources*/courses.get(i).getTitle(), Toast.LENGTH_LONG).show();
+               /* Toast.makeText(view.getContext(), *//*dataSources*//*courses.get(i).getTitle(), Toast.LENGTH_LONG).show();
                 Bundle bundle = new Bundle();
                 bundle.putString("msg", "edit");
                 bundle.putInt("position", i);
                 Intent in=new Intent(getActivity(),AddCourse.class);
                 in.putExtra("xy", bundle);
-                startActivity(in);
+                startActivity(in);*/
+                //todo: like tasks
+                MenuItem menuItem = null;
+                position=i;
+                mOnNavigationItemSelectedListener.onNavigationItemSelected(menuItem);
+
             }
         });
     }
-
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = item ->
+    {
+        BottomSheetFragment_Course bf = new BottomSheetFragment_Course(position);
+        bf.show(getActivity().getSupportFragmentManager(), bf.getTag());
+        return true;
+    };
 
     public class CustomComparatorRating implements Comparator<CourseView> {
 
@@ -132,7 +147,14 @@ public class Courses extends Fragment  {
 
         @Override
         public int compare(CourseView t1, CourseView t2) {
-            return t1.getDateFormat().compareTo(t2.getDateFormat());
+           int i=-1;
+            try {
+               i= t1.getDateFormat().compareTo(t2.getDateFormat());
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+            return i;
         }
     }
 

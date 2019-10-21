@@ -14,8 +14,6 @@ public class CourseView {
     private double points;
     private int grade;
 
-
-
     public double getPoints() {
         return points;
     }
@@ -91,8 +89,10 @@ public class CourseView {
         this.rating = rating;
         this.date = date;
         this.dateFormat = dateFormat;
+        if(!grade.isEmpty())
         this.grade=Integer.parseInt(grade);
-        this.points=Double.parseDouble(points);
+        if(!points.isEmpty())
+            this.points=Double.parseDouble(points);
     }
 
     private void setColor() {

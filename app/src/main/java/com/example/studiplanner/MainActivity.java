@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public static List<TaskView> tasks  = new ArrayList<>();
     public static List<TaskView> tasks_done  = new ArrayList<>();
     public static HashMap<Integer, CourseView> textViews = new HashMap();
-
+    public static  boolean table_numbers=true;
     @Override
     protected void onDestroy() {
         super.onDestroy();

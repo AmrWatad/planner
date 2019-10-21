@@ -12,17 +12,12 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 
-import com.amulyakhare.textdrawable.TextDrawable;
 import com.example.studiplanner.R;
-import com.example.studiplanner.course.CourseView;
 
 import java.util.ArrayList;
 
 import static com.example.studiplanner.MainActivity.tasks_done;
-import static com.example.studiplanner.fragments.Courses.adapter;
-import static com.example.studiplanner.fragments.Tasks.adapter1;
 import static com.example.studiplanner.fragments.Tasks.mListView1;
-import static com.example.studiplanner.task.BottomSheetFragment.mListViewTask;
 //import static com.example.studiplanner.task.BottomSheetFragment.tasks_done;
 
 
@@ -104,7 +99,7 @@ public class TaskBaseAdapter extends BaseAdapter {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         popupInputDialogView = layoutInflater.inflate(R.layout.popup_finished_task, null);
         TextView delete = popupInputDialogView.findViewById(R.id.textdelete);
-        TextView name = popupInputDialogView.findViewById(R.id.textback);
+        TextView name = popupInputDialogView.findViewById(R.id.text_edit);
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

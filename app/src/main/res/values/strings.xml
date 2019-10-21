@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">studiplanner</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="day1">א</string>
+    <string name="day2">ב</string>
+    <string name="day3">ג</string>
+    <string name="day4">ד</string>
+    <string name="day5">ה</string>
 </resources>

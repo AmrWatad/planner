@@ -110,7 +110,7 @@ public class DoneTaskBaseAdapter extends BaseAdapter {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         popupInputDialogView = layoutInflater.inflate(R.layout.popup_return_task, null);
         TextView returnTask = popupInputDialogView.findViewById(R.id.textdelete);
-        TextView name = popupInputDialogView.findViewById(R.id.textback);
+        TextView name = popupInputDialogView.findViewById(R.id.text_edit);
         returnTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -135,7 +135,7 @@ public class DoneTaskBaseAdapter extends BaseAdapter {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         popupInputDialogView = layoutInflater.inflate(R.layout.popup_remove_course, null);
         TextView delete = popupInputDialogView.findViewById(R.id.textdelete);
-        TextView name = popupInputDialogView.findViewById(R.id.textback);
+        TextView name = popupInputDialogView.findViewById(R.id.text_edit);
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

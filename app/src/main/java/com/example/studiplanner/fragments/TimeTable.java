@@ -22,25 +22,30 @@ import com.amulyakhare.textdrawable.TextDrawable;
 import com.example.studiplanner.R;
 import com.example.studiplanner.course.CourseView;
 import com.example.studiplanner.course.CoursesBaseAdapter;
+import com.github.angads25.toggle.widget.LabeledSwitch;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 import static android.content.ContentValues.TAG;
 import static com.example.studiplanner.MainActivity.courses;
+import static com.example.studiplanner.MainActivity.table_numbers;
 import static com.example.studiplanner.MainActivity.textViews;
 //import static com.example.studiplanner.fragments.Courses.courses;
 
 public class TimeTable extends Fragment {
     TableLayout tableLayout;
-
+    LabeledSwitch switchgit;
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.table , container, false);
         tableLayout = v.findViewById(R.id.table);
+          switchgit=v.findViewById(R.id.switchgit);
         textViews.entrySet().stream().forEach(i -> {
             TextDrawable drawable = TextDrawable.builder()
                     .buildRect(i.getValue().getShortTitle(), i.getValue().getColor());
@@ -51,9 +56,31 @@ public class TimeTable extends Fragment {
         onTable();
         return v;
     }
-
+   private List<String> times;
     private void onTable() {
+        if(table_numbers) {
+            switchgit.setOn(true);
+            setTableOrder();
+        }
 
+        switchgit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                 times= Arrays.asList("8:00-\n10:00","10:00-\n12:00","12:00-\n14:00","14:00-\n16:00",
+                        "16:00-\n18:00","18:00-\n20:00","20:00-\n22:00");//,"10:00-12:00","10:00-12:00","10:00-12:00");
+                times.get(1);
+                if(switchgit.isOn()){
+                    table_numbers=false;
+
+                }
+                else{
+                    table_numbers=true;
+
+                }
+                setTableOrder();
+
+            }
+        });
         for (int i = 2; i < tableLayout.getChildCount(); i++) {
             View child = tableLayout.getChildAt(i);
 
@@ -73,6 +100,21 @@ public class TimeTable extends Fragment {
                         });
                     }
                 }
+            }
+        }
+    }
+
+    private void setTableOrder( ) {
+        if(table_numbers) {
+            for (int i = 1; i < 8; i++) {
+                ((TextView) ((TableRow) tableLayout.getChildAt(i + 1)).getChildAt(0)).setText(i + ".");
+
+            }
+        }
+        else{
+            for (int i = 1; i < 8; i++) {
+                ((TextView) ((TableRow) tableLayout.getChildAt(i + 1)).getChildAt(0)).setText(times.get(i-1));
+
             }
         }
     }

@@ -38,14 +38,14 @@
 
     <ImageView
         android:id="@+id/remove_item"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/item_course_image"
-        app:srcCompat="@android:drawable/btn_dialog" />
+        app:srcCompat="@drawable/sett" />
 
     <TextView
         android:id="@+id/t_rating"

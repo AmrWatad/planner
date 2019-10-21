@@ -76,8 +76,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
         mListViewTask.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                taskName.setText(tasks_done.get(i).getName());
-                dialog.dismiss();
+                 dialog.dismiss();
             }
         });
     }

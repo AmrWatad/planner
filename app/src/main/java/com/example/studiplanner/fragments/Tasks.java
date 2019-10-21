@@ -40,7 +40,7 @@ import static com.example.studiplanner.MainActivity.tasks;
 public class Tasks extends Fragment {
     ConstraintLayout constraintLayout;
     public static TextView taskName;
-    FloatingActionButton plus;
+    FloatingActionButton plus,done;
     public  static ListView mListView1;
      public  static TaskBaseAdapter adapter1;
     View v;
@@ -52,14 +52,15 @@ public class Tasks extends Fragment {
         initListView();
           constraintLayout=v.findViewById(R.id.cns_task);
         taskName=v.findViewById(R.id.t_task_name);
-        constraintLayout.setOnClickListener(new View.OnClickListener() {
+       /* constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MenuItem menuItem = null;
                 mOnNavigationItemSelectedListener.onNavigationItemSelected(menuItem);
             }
-        });
+        });*/
         plus=v.findViewById(R.id.fab);
+        done=v.findViewById(R.id.fab_done);
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +71,13 @@ public class Tasks extends Fragment {
                 getActivity().startActivity(intent);
             }
         });
-
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MenuItem menuItem = null;
+                mOnNavigationItemSelectedListener.onNavigationItemSelected(menuItem);
+            }
+        });
 
         return v;
     }
@@ -86,7 +93,6 @@ public class Tasks extends Fragment {
         if(savedInstanceState != null) {
             String editTextValue = savedInstanceState.getString("EditText");
             Log.i(TAG, "Found edit text value: " + editTextValue);
-
         }
     }
     @Override
