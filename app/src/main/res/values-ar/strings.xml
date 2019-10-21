@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">studiplanner</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="day1">أ</string>
+    <string name="day2">أث</string>
+    <string name="day3">ث</string>
+    <string name="day4">أر</string>
+    <string name="day5">خ</string>
+    <string name="day6">سبت</string>
+
+    <string name="course_name">اسم الدورة</string>
+    <string name="short_code">Short Code</string>
+    <string name="teacher">محاضر</string>
+    <string name="location">موقع</string>
+    <string name="details">تفاصيل</string>
+    <string name="grade">علامة</string>
+    <string name="points">نقاط</string>
+    <string name="exam_date">تاريخ الامتحان</string>
+    <string name="save">حفظ</string>
+    <string name="task">وظيفة</string>
+    <string name="course">دورة</string>
+    <string name="task_date">تاريخ التسليم</string>
+    <string name="courses">دورات</string>
+    <string name="tasks">مهماتي</string>
+    <string name="tasks_done">المهمات الجاهزه</string>
+    <string name="congratulations">تهانينا</string>
+    <string name="do_you_want_to_pass_task_to_done_tasks_list">هل تود تمرير المهمة لقائمة المهام الجاهزة</string>
+    <string name="pass">تمرير</string>
+    <string name="no">لا</string>
+    <string name="edit_delete">تعديل/حذف</string>
+    <string name="delete">حذف</string>
+    <string name="edit">تعديل</string>
+    <string name="sorry">عذرا</string>
+    <string name="return1">اعادة</string>
+    <string name="do_you_want_to_return_task_to_tasks_list">هل تود ارجاع المهمة لقائمة المهام</string>
+    <string name="timetable">برنامج الاسبوع</string>
+    <string name="table_numbers">الى جدول الارقام </string>
+    <string name="table_time">الى جدول الوقت</string>
+</resources>

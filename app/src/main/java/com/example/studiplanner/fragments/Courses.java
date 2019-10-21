@@ -51,6 +51,8 @@ public class Courses extends Fragment  {
                              Bundle savedInstanceState) {
           v =  inflater.inflate(R.layout.fragment_courses, container, false);
         initListView();
+        Collections.sort(courses, new Courses.CustomComparatorDate());
+
         plus=v.findViewById(R.id.fab);
         aSwitch=v.findViewById(R.id.switchgit);
         aSwitch.setOnClickListener(new View.OnClickListener() {

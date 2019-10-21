@@ -39,7 +39,7 @@ public class BottomSheetFragment_Course extends BottomSheetDialogFragment {
     //create custom theme for your bottom sheet modal
     @Override
     public int getTheme() {
-        return R.style.AppBottomSheetDialogTheme;
+        return  0;//R.style.AppBottomSheetDialogTheme;
     }
 
 
@@ -81,9 +81,9 @@ public class BottomSheetFragment_Course extends BottomSheetDialogFragment {
         grade.setText(courses.get(position).getGrade()+"");
         points.setText(courses.get(position).getPoints() +"");
         exam.setText(courses.get(position).getDate() +"");
-        DisplayMetrics displayMetrics = getActivity().getResources().getDisplayMetrics();
-        int width = displayMetrics.widthPixels;
-        int height = displayMetrics.heightPixels;
+     //   DisplayMetrics displayMetrics = getActivity().getResources().getDisplayMetrics();
+    //    int width = displayMetrics.widthPixels;
+     //   int height = displayMetrics.heightPixels;
         int maxHeight = (int) (500); //custom height of bottom sheet
 
         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) contentView.getParent()).getLayoutParams();

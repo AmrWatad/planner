@@ -13,7 +13,7 @@
         android:layout_height="100dp"
         android:id="@+id/task_name"
         app:mtf_cardCollapsedHeight="4dp"
-        app:mtf_image="@drawable/plus"
+        app:mtf_image="@drawable/task"
         app:mtf_animationDuration="1000"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:hint="Task"
+        android:hint="@string/task"
         android:textColor="#000000"
         android:textSize="18dp"
        />
@@ -44,6 +44,7 @@
         android:id="@+id/details"
         android:layout_width="0dp"
         android:layout_height="100dp"
+        app:mtf_image="@drawable/course"
 
         app:layout_constraintEnd_toEndOf="@+id/task_name"
         app:layout_constraintStart_toStartOf="@+id/task_name"
@@ -58,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="left|top"
-            android:hint="Details"
+            android:hint="@string/details"
             android:textColor="#000000"
             android:textSize="18dp" />
 
@@ -93,7 +94,7 @@
             android:background="#112E4E"
             android:contentDescription="Save"
             android:src="@android:color/transparent"
-            android:text="Save" />
+            android:text="@string/save" />
     </FrameLayout>
 
     <TextView
@@ -101,7 +102,7 @@
         android:layout_width="60dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
-        android:text="Course"
+        android:text="@string/course"
         android:textSize="18dp"
 android:gravity="center"
         app:layout_constraintStart_toStartOf="@+id/details"
@@ -141,7 +142,7 @@ android:gravity="center"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
-        android:text="Add reminder"
+        android:text="@string/task_date"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="@+id/t_course"
         app:layout_constraintTop_toBottomOf="@+id/t_course" />

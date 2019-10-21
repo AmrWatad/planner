@@ -26,7 +26,7 @@
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:gravity="left|top"
-            android:hint="Grade"
+            android:hint="@string/grade"
 
             android:inputType="number"
             android:textColor="#000000"
@@ -53,7 +53,7 @@
                 android:layout_width="70dp"
                 android:layout_height="40dp"
                 android:gravity="left|top"
-                android:hint="Points"
+                android:hint="@string/points"
 
                 android:inputType="number"
                 android:textColor="#000000"
@@ -89,7 +89,7 @@
                 android:background="#112E4E"
                 android:contentDescription="Save"
                 android:src="@android:color/transparent"
-                android:text="Save" />
+                android:text="@string/save" />
         </FrameLayout>
 
         <TextView
@@ -97,7 +97,7 @@
             android:layout_width="130dp"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="Exam Date"
+            android:text="@string/exam_date"
             android:textColor="#000000"
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="@+id/e_grade"
@@ -111,7 +111,7 @@
             android:layout_marginLeft="16dp"
             android:gravity="center"
 
-            android:hint="Exam Date"
+            android:hint="@string/exam_date"
 
             android:inputType="date"
             android:textColor="#000000"
@@ -122,9 +122,9 @@
         <com.github.florent37.materialtextfield.MaterialTextField
             android:id="@+id/course_name"
             android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
@@ -133,17 +133,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:mtf_animationDuration="1000"
             app:mtf_cardCollapsedHeight="4dp"
-             app:mtf_labelColor="#112E4E"
+            app:mtf_labelColor="#112E4E"
+            app:mtf_image="@drawable/course"
+
             app:mtf_openKeyboardOnFocus="true">
 
             <EditText
                 android:id="@+id/e_course_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#000000"
 
-                android:hint="course name"
+                android:textStyle="bold|italic"
+                android:hint="@string/course_name"
                 android:textColor="#000000"
-                android:textSize="18dp" />
+                android:textSize="24dp" />
 
         </com.github.florent37.materialtextfield.MaterialTextField>
 
@@ -151,7 +155,7 @@
             android:id="@+id/shortcode"
             android:layout_width="0dp"
             android:layout_height="100dp"
-
+android:visibility="gone"
             android:layout_marginTop="4dp"
             app:layout_constraintStart_toStartOf="@+id/course_name"
             app:layout_constraintTop_toBottomOf="@+id/course_name"
@@ -165,7 +169,7 @@
                 android:id="@+id/e_shortcode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Short Code"
+                android:hint="@string/short_code"
                 android:maxLength="4"
                 android:textColor="#000000"
                 android:textSize="18dp" />
@@ -175,6 +179,7 @@
             android:id="@+id/teacher"
             android:layout_width="0dp"
             android:layout_height="100dp"
+            app:mtf_image="@drawable/teacher"
 
             android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="@+id/course_name"
@@ -189,7 +194,7 @@
                 android:id="@+id/e_teacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Teacher"
+                android:hint="@string/teacher"
                 android:textColor="#000000"
                 android:textSize="18dp" />
         </com.github.florent37.materialtextfield.MaterialTextField>
@@ -198,6 +203,7 @@
             android:id="@+id/location"
             android:layout_width="0dp"
             android:layout_height="100dp"
+            app:mtf_image="@drawable/location"
 
             android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="@+id/teacher"
@@ -214,7 +220,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="Location"
+                android:hint="@string/location"
                 android:textColor="#000000"
                 android:textSize="18dp" />
         </com.github.florent37.materialtextfield.MaterialTextField>
@@ -229,6 +235,8 @@
             app:layout_constraintTop_toBottomOf="@+id/location"
             app:mtf_animationDuration="1000"
             app:mtf_cardCollapsedHeight="4dp"
+            app:mtf_image="@drawable/task"
+
             app:mtf_labelColor="#112E4E"
             app:mtf_openKeyboardOnFocus="true">
 
@@ -237,7 +245,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="left|top"
-                android:hint="Details"
+                android:hint="@string/details"
                 android:background="@drawable/rectangle"
                 android:textColor="#000000"
                 android:textSize="16dp" />
@@ -247,7 +255,8 @@
         <com.github.florent37.materialtextfield.MaterialTextField
             android:id="@+id/lecture_hours"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="10dp"
+            android:visibility="invisible"
             android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="@+id/details"
             app:layout_constraintStart_toStartOf="@+id/details"
@@ -276,6 +285,7 @@
             app:mtf_animationDuration="1000"
             app:mtf_cardCollapsedHeight="4dp"
             app:mtf_labelColor="#112E4E"
+            android:visibility="invisible"
             app:mtf_openKeyboardOnFocus="true">
 
             <EditText

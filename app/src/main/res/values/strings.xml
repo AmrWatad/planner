@@ -1,9 +1,39 @@
 <resources>
     <string name="app_name">studiplanner</string>
     <string name="title_activity_main2">Main2Activity</string>
-    <string name="day1">א</string>
-    <string name="day2">ב</string>
-    <string name="day3">ג</string>
-    <string name="day4">ד</string>
-    <string name="day5">ה</string>
+    <string name="day1">Mo</string>
+    <string name="day2">Tu</string>
+    <string name="day3">We</string>
+    <string name="day4">Th</string>
+    <string name="day5">Fr</string>
+    <string name="day6">Sa</string>
+    <string name="course_name">course name</string>
+    <string name="short_code">Short Code</string>
+    <string name="teacher">Teacher</string>
+    <string name="location">Location</string>
+    <string name="details">Details</string>
+    <string name="grade">Grade</string>
+    <string name="points">Points</string>
+    <string name="exam_date">Exam Date</string>
+    <string name="save">Save</string>
+    <string name="task">Task</string>
+    <string name="course">Course</string>
+    <string name="task_date">Task date</string>
+    <string name="courses">courses</string>
+    <string name="tasks">Tasks</string>
+    <string name="tasks_done">Tasks Done</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="do_you_want_to_pass_task_to_done_tasks_list">Do You want to pass task to done tasks list?</string>
+    <string name="pass">Pass</string>
+    <string name="no">No</string>
+    <string name="edit_delete">Edit/Delete</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="sorry">Sorry</string>
+    <string name="return1">return</string>
+
+    <string name="do_you_want_to_return_task_to_tasks_list">Do You want to return task to tasks list?</string>
+    <string name="timetable">TimeTable</string>
+    <string name="table_numbers">to table numbers</string>
+    <string name="table_time">to table time</string>
 </resources>

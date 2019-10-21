@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">studiplanner</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="day1">א</string>
+    <string name="day2">ב</string>
+    <string name="day3">ג</string>
+    <string name="day4">ד</string>
+    <string name="day5">ה</string>
+    <string name="day6">ו</string>
+
+    <string name="course_name">שם הקורס</string>
+    <string name="short_code">Short Code</string>
+    <string name="teacher">מרצה</string>
+    <string name="location">חדר</string>
+    <string name="details">הערות</string>
+    <string name="grade">ציון</string>
+    <string name="points">נק"ז</string>
+    <string name="exam_date">תאריך המבחן</string>
+    <string name="save">שמור</string>
+    <string name="task">עבודה</string>
+    <string name="course">קורס</string>
+    <string name="task_date"> תאריך הגשה</string>
+    <string name="courses">  קורסים</string>
+    <string name="tasks"> עבודות </string>
+    <string name="tasks_done">עבודות מוגשות</string>
+    <string name="congratulations">מברוק</string>
+    <string name="do_you_want_to_pass_task_to_done_tasks_list">האם אתה רוצה להעביר העבודה לרשימת עבודות מוגשות</string>
+    <string name="pass">העבר</string>
+    <string name="no">לא</string>
+    <string name="edit_delete">תיקון/מחיקה</string>
+    <string name="delete">מחיקה</string>
+    <string name="edit">תיקון</string>
+    <string name="sorry">סליחה</string>
+    <string name="return1">החזר</string>
+
+    <string name="do_you_want_to_return_task_to_tasks_list">האם אתה רוצה להחזיר העבודה לרשימת עבודות</string>
+    <string name="timetable"> טבלה שבועית</string>
+    <string name="table_numbers">לטבלה עם מספרים</string>
+    <string name="table_time">לטבלה עם זמן</string>
+</resources>
