@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -65,10 +66,11 @@ public class DoneTaskBaseAdapter extends BaseAdapter {
             holder.title = convertView.findViewById(R.id.item_task_title);
             holder.remove = convertView.findViewById(R.id.remove_item);
             holder.unDone = convertView.findViewById(R.id.imagedone);
+            holder.checkBox = convertView.findViewById(R.id.checkBox2);
             holder.unDone.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    creatPopUp(position,"passunDone");
+                    creatPopUp(position, "passunDone", ((CheckBox) view));
                 }
             });
             convertView.setTag(holder);
@@ -80,7 +82,13 @@ public class DoneTaskBaseAdapter extends BaseAdapter {
         holder.remove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                creatPopUp(position,"remove");
+                creatPopUp(position, "remove", null);
+            }
+        });
+        holder.checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                creatPopUp(position, "passunDone", ((CheckBox) view));
             }
         });
 
@@ -89,24 +97,32 @@ public class DoneTaskBaseAdapter extends BaseAdapter {
     }
 
     public static class CourseViewHolder {
-        public ImageView remove,unDone;
+        public ImageView remove, unDone;
         public TextView title;
+        public CheckBox checkBox;
     }
-    private void creatPopUp(int position,String type) {
+
+    private void creatPopUp(int position, String type, CheckBox checkBox) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setCancelable(true);
-        if(type.equals("remove"))
-        initPopupViewControls(position);
-        else{
-            initPopupViewControls_unDone(position);
-
+        boolean flag = false;
+        if (type.equals("remove"))
+            initPopupViewControls(position);
+        else {
+            initPopupViewControls_unDone(position, checkBox);
+            flag = true;
         }
         alertDialogBuilder.setView(popupInputDialogView);
         alertDialog = alertDialogBuilder.create();
         alertDialog.show();
+        if (flag)
+            alertDialog.setOnDismissListener(dialog -> {
+                checkBox.setChecked(true);
+                /* code goes here */
+            });
     }
 
-    private void initPopupViewControls_unDone(int position) {
+    private void initPopupViewControls_unDone(int position, CheckBox checkBox) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         popupInputDialogView = layoutInflater.inflate(R.layout.popup_return_task, null);
         TextView returnTask = popupInputDialogView.findViewById(R.id.textdelete);
@@ -126,6 +142,7 @@ public class DoneTaskBaseAdapter extends BaseAdapter {
         name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                checkBox.setChecked(true);
                 alertDialog.dismiss();
             }
         });

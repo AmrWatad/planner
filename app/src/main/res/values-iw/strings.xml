@@ -18,24 +18,28 @@
     <string name="points">נק"ז</string>
     <string name="exam_date">תאריך המבחן</string>
     <string name="save">שמור</string>
-    <string name="task">עבודה</string>
+    <string name="task">משימה</string>
     <string name="course">קורס</string>
     <string name="task_date"> תאריך הגשה</string>
     <string name="courses">  קורסים</string>
-    <string name="tasks"> עבודות </string>
-    <string name="tasks_done">עבודות מוגשות</string>
-    <string name="congratulations">מברוק</string>
-    <string name="do_you_want_to_pass_task_to_done_tasks_list">האם אתה רוצה להעביר העבודה לרשימת עבודות מוגשות</string>
-    <string name="pass">העבר</string>
+    <string name="tasks"> משימות </string>
+    <string name="tasks_done">משימות מוכנות</string>
+    <string name="congratulations">כל הכבוד</string>
+    <string name="do_you_want_to_pass_task_to_done_tasks_list">האם אתה רוצה להעביר המשימה לרשימת המשימות המוכנות</string>
+    <string name="pass">כן</string>
     <string name="no">לא</string>
     <string name="edit_delete">תיקון/מחיקה</string>
     <string name="delete">מחיקה</string>
     <string name="edit">תיקון</string>
     <string name="sorry">סליחה</string>
-    <string name="return1">החזר</string>
+    <string name="return1">כן</string>
 
-    <string name="do_you_want_to_return_task_to_tasks_list">האם אתה רוצה להחזיר העבודה לרשימת עבודות</string>
+    <string name="do_you_want_to_return_task_to_tasks_list">האם אתה רוצה להחזיר המשימה לרשימת המשימות</string>
     <string name="timetable"> טבלה שבועית</string>
     <string name="table_numbers">לטבלה עם מספרים</string>
     <string name="table_time">לטבלה עם זמן</string>
+    <string name="write_course_name">תכתוב שם הקורס</string>
+    <string name="write_task_name">תכתוב שם המשימה</string>
+    <string name="not_found">אין משימות מוכנות</string>
+    <string name="write_point_of_course">תכתוב כמה נק"ז לקורס!</string>
 </resources>

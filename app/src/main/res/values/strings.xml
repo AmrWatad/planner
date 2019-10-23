@@ -36,4 +36,8 @@
     <string name="timetable">TimeTable</string>
     <string name="table_numbers">to table numbers</string>
     <string name="table_time">to table time</string>
+    <string name="write_course_name">write course name!</string>
+    <string name="write_task_name">write task name!</string>
+    <string name="not_found">not found</string>
+    <string name="write_point_of_course">write points of course  !</string>
 </resources>

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,9 +26,10 @@ public class TaskBaseAdapter extends BaseAdapter {
     private LayoutInflater mInflater;
     private ArrayList<TaskView> mDataSource;
     Context context;
-
+    CourseViewHolder holder;
     private View popupInputDialogView = null;
     private AlertDialog alertDialog;
+    private CheckBox delete;
 
     public TaskBaseAdapter(Context context, ArrayList<TaskView> items) {
         mDataSource = items;
@@ -56,12 +58,13 @@ public class TaskBaseAdapter extends BaseAdapter {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        CourseViewHolder holder;
+
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.item_task, parent, false);
             holder = new CourseViewHolder();
             holder.title = convertView.findViewById(R.id.item_task_title);
             holder.isDone = convertView.findViewById(R.id.remove_done_item);
+            holder.delete = convertView.findViewById(R.id.checkBox);
             holder.task_course = convertView.findViewById(R.id.task_course);
             holder.date = convertView.findViewById(R.id.task_date);
             convertView.setTag(holder);
@@ -75,7 +78,13 @@ public class TaskBaseAdapter extends BaseAdapter {
         holder.isDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                creatPopUp(position);
+                creatPopUp(position, ((CheckBox) view));
+            }
+        });
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                creatPopUp(position, ((CheckBox) view));
             }
         });
         return convertView;
@@ -84,18 +93,24 @@ public class TaskBaseAdapter extends BaseAdapter {
 
     public static class CourseViewHolder {
         public ImageView isDone;
-        public TextView title,task_course,date;
+        public TextView title, task_course, date;
+        public CheckBox delete;
     }
-    private void creatPopUp(int position) {
+
+    private void creatPopUp(int position, CheckBox checkBox) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setCancelable(true);
-        initPopupViewControls(position);
+        initPopupViewControls(position, checkBox);
         alertDialogBuilder.setView(popupInputDialogView);
         alertDialog = alertDialogBuilder.create();
         alertDialog.show();
+        alertDialog.setOnDismissListener(dialog -> {
+            checkBox.setChecked(false);
+            /* code goes here */
+        });
     }
 
-    private void initPopupViewControls(int position) {
+    private void initPopupViewControls(int position, CheckBox checkBox) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         popupInputDialogView = layoutInflater.inflate(R.layout.popup_finished_task, null);
         TextView delete = popupInputDialogView.findViewById(R.id.textdelete);
@@ -115,8 +130,11 @@ public class TaskBaseAdapter extends BaseAdapter {
         name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                checkBox.setChecked(false);
                 alertDialog.dismiss();
             }
         });
+
+
     }
 }

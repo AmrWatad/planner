@@ -1,10 +1,12 @@
 package com.example.studiplanner.course;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -27,11 +29,15 @@ import static com.example.studiplanner.fragments.Courses.mListView;
 public class AddCourse extends AppCompatActivity {
         EditText course,shortCode,techer,location,details,rating,grade,points;
                 TextView dateClick,date;
+
     FrameLayout save;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_course);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
         course=findViewById(R.id.e_course_name);
         shortCode=findViewById(R.id.e_shortcode);
         techer=findViewById(R.id.e_teacher);
@@ -70,12 +76,13 @@ public class AddCourse extends AppCompatActivity {
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(!grade.getText().toString().isEmpty() && points.getText().toString().isEmpty())
-                        Toast.makeText(getBaseContext(),"write points of course  !",Toast.LENGTH_LONG).show();
+                    if(/*(!grade.getText().toString().isEmpty()) && */points.getText().toString().isEmpty())
+                        Toast.makeText(getBaseContext(),getResources().getString(R.string.write_point_of_course) ,Toast.LENGTH_LONG).show();
                     if (course.getText().toString().isEmpty())
-                        Toast.makeText(getBaseContext(), "write course name!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), getResources().getString(R.string.write_course_name), Toast.LENGTH_LONG).show();
                     else{
-                        courses.get(position).setTitle(course.getText().toString());
+
+                         courses.get(position).setTitle(course.getText().toString());
 
                         courses.get(position).setGrade(Integer.parseInt(grade.getText().toString()));
                         courses.get(position).setPoints(Double.parseDouble(points.getText().toString()));
@@ -95,6 +102,7 @@ public class AddCourse extends AppCompatActivity {
                         }
                         AddCourse.super.onBackPressed();
                     }
+
                 }
             });
         }
@@ -104,7 +112,7 @@ public class AddCourse extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if(course.getText().toString().isEmpty())
-                        Toast.makeText(getBaseContext(),"write course name!",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(),getResources().getString(R.string.write_course_name),Toast.LENGTH_LONG).show();
                     else{
                         courses.add(new CourseView(course.getText().toString(),shortCode.getText().toString()
                                 ,techer.getText().toString()
@@ -125,6 +133,18 @@ public class AddCourse extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem)
+    {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(menuItem);
+        }
     }
     Date dateformat = null;
 

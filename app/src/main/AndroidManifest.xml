@@ -5,9 +5,9 @@
     <!-- Register the Alarm Receiver -->
      <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon_stud"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon_stud"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
          <service
@@ -15,12 +15,16 @@
              android:label="@string/app_name">
              <intent-filter>
                  <action android:name="your.app.domain.NotificationService" />
-
                  <category android:name="android.intent.category.DEFAULT" />
              </intent-filter>
          </service>
 
-         <activity android:name=".course.AddCourse"></activity>
+         <activity android:name=".course.AddCourse">
+
+             <meta-data
+                 android:name="android.support.PARENT_ACTIVITY"
+                 android:value=".MainActivity"/>
+         </activity>
          <activity android:name=".task.AddTask"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>

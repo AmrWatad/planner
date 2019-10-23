@@ -74,8 +74,9 @@ public class CoursesBaseAdapter extends BaseAdapter {
         holder.title.setText(course.getTitle());
         holder.rating.setText(course.getRating()+"/10");
         holder.date.setText(course.getDate());
-        TextDrawable drawable = TextDrawable.builder()
-                .buildRound(course.getShortTitle(), course.getColor());
+        TextDrawable drawable = TextDrawable.builder().beginConfig()
+                .fontSize(23).endConfig()
+                .buildRound(course.getTitle(), course.getColor());
 
         holder.image.setBackground(drawable);
         holder.remove.setOnClickListener(new View.OnClickListener() {

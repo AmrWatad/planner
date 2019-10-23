@@ -68,12 +68,12 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
         DisplayMetrics displayMetrics = getActivity().getResources().getDisplayMetrics();
         int width = displayMetrics.widthPixels;
         int height = displayMetrics.heightPixels;
-        int maxHeight = (int) (500); //custom height of bottom sheet
+      /*  int maxHeight = (int) (500); //custom height of bottom sheet
 
         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) contentView.getParent()).getLayoutParams();
         CoordinatorLayout.Behavior behavior = params.getBehavior();
         ((BottomSheetBehavior) behavior).setPeekHeight(maxHeight);  //changed default peek height of bottom sheet
-        mListViewTask.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+      */  mListViewTask.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                  dialog.dismiss();

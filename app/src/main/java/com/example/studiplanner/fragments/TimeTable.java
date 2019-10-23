@@ -47,8 +47,9 @@ public class TimeTable extends Fragment {
         tableLayout = v.findViewById(R.id.table);
           switchgit=v.findViewById(R.id.switchgit);
         textViews.entrySet().stream().forEach(i -> {
-            TextDrawable drawable = TextDrawable.builder()
-                    .buildRect(i.getValue().getShortTitle(), i.getValue().getColor());
+            TextDrawable drawable = TextDrawable.builder().beginConfig()
+                    .fontSize(23).endConfig()
+                    .buildRect(i.getValue().getTitle()/*getShortTitle()*/, i.getValue().getColor());
             TextView textView = v.findViewById(i.getKey());
             if (drawable!=null && textView!=null)
             textView.setBackground(drawable);
@@ -166,8 +167,9 @@ public class TimeTable extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                TextDrawable drawable = TextDrawable.builder()
-                        .buildRect(courses.get(i).getShortTitle(), courses.get(i).getColor());
+                TextDrawable drawable = TextDrawable.builder().beginConfig()
+                        .fontSize(23).endConfig()
+                        .buildRect(courses.get(i).getTitle()/*getShortTitle()*/, courses.get(i).getColor());
                 if (textView instanceof TextView) {
                     TextView viewText = (TextView) textView;
                     viewText.setBackground(drawable);

@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -17,6 +18,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -56,6 +58,9 @@ public class AddTask extends AppCompatActivity {
             Collections.sort(tasks, new CustomComparator());
         setContentView(R.layout.activity_add_task);
         task=findViewById(R.id.e_task_name);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
         course=findViewById(R.id.t_course);
         course_task_View =findViewById(R.id.t_course_view);
         date=findViewById(R.id.add_date);
@@ -89,7 +94,7 @@ public class AddTask extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if(task.getText().toString().isEmpty())
-                        Toast.makeText(getBaseContext(),"write course name!",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), getResources().getString(R.string.write_course_name),Toast.LENGTH_LONG).show();
                     else{
                         tasks.get(position).setName(task.getText().toString());
                         tasks.get(position).setDetails(details.getText().toString());
@@ -113,7 +118,7 @@ public class AddTask extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if(task.getText().toString().isEmpty())
-                        Toast.makeText(getBaseContext(),"write course name!",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(),getResources().getString(R.string.write_task_name),Toast.LENGTH_LONG).show();
                     else{
                         tasks.add(new TaskView(task.getText().toString() ,details.getText().toString(),date_pecker.getText().toString(),dateformat,course_task_View.getText().toString()));
                         mListView1.setAdapter(adapter1);
@@ -130,6 +135,18 @@ public class AddTask extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem)
+    {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(menuItem);
+        }
     }
     private void creatPopUp() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);

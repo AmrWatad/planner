@@ -35,6 +35,7 @@ import java.util.List;
 
 import static android.content.ContentValues.TAG;
 import static com.example.studiplanner.MainActivity.tasks;
+import static com.example.studiplanner.MainActivity.tasks_done;
 //import static com.example.studiplanner.task.BottomSheetFragment.tasks;
 
 public class Tasks extends Fragment {
@@ -74,8 +75,13 @@ public class Tasks extends Fragment {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MenuItem menuItem = null;
-                mOnNavigationItemSelectedListener.onNavigationItemSelected(menuItem);
+                if(tasks_done.isEmpty()){
+                    Toast.makeText(getContext(), getResources().getString(R.string.not_found),Toast.LENGTH_LONG).show();
+                }else{
+                    MenuItem menuItem = null;
+                    mOnNavigationItemSelectedListener.onNavigationItemSelected(menuItem);
+                }
+
             }
         });
 

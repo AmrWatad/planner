@@ -2,11 +2,11 @@
 <resources>
     <string name="app_name">studiplanner</string>
     <string name="title_activity_main2">Main2Activity</string>
-    <string name="day1">أ</string>
-    <string name="day2">أث</string>
-    <string name="day3">ث</string>
-    <string name="day4">أر</string>
-    <string name="day5">خ</string>
+    <string name="day1">أحد</string>
+    <string name="day2">أثنين</string>
+    <string name="day3">ثلاثاء</string>
+    <string name="day4">أربعاء</string>
+    <string name="day5">خميس</string>
     <string name="day6">سبت</string>
 
     <string name="course_name">اسم الدورة</string>
@@ -37,4 +37,8 @@
     <string name="timetable">برنامج الاسبوع</string>
     <string name="table_numbers">الى جدول الارقام </string>
     <string name="table_time">الى جدول الوقت</string>
+    <string name="write_course_name">اكتب اسم الدورة!</string>
+    <string name="write_task_name">اكتب اسم المهمة!</string>
+    <string name="not_found">لا يوجد مهام جاهزة</string>
+    <string name="write_point_of_course">اكتب نقاط(وحدة) للدورة!</string>
 </resources>

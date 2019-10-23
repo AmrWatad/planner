@@ -47,14 +47,14 @@
             android:layout_marginTop="8dp"
             android:layout_marginRight="10dp"
             android:gravity="center"
-            android:paddingLeft="20dp"
+            android:paddingLeft="8dp"
             android:paddingRight="20dp"
             android:layout_marginLeft="16dp"
 
             android:text="@string/tasks"
             android:textColor="#000000"
-            android:textSize="32dp"
-            android:textStyle="bold|italic"
+            android:textSize="28dp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -72,7 +72,7 @@
 
         app:layout_constraintBottom_toBottomOf="@+id/text"
         app:layout_constraintEnd_toEndOf="@+id/text"
-        app:srcCompat="@drawable/pen" />
+        app:srcCompat="@drawable/plus2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_done"
