@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/selectableItemBackground"
-
+    android:foreground="?android:attr/selectableItemBackground"
     >
 
     <ListView
@@ -22,11 +22,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cns_task"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="#B8B8B8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
         <ImageView
             android:layout_width="20dp"
             android:layout_height="10dp"
@@ -43,20 +51,20 @@
             android:id="@+id/t_task_name"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="10dp"
+              android:layout_marginRight="10dp"
             android:gravity="center"
-            android:paddingLeft="8dp"
-            android:paddingRight="20dp"
-            android:layout_marginLeft="16dp"
 
             android:text="@string/tasks"
             android:textColor="#000000"
             android:textSize="28dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="20dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

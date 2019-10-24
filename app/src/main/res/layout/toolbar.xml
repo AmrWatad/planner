@@ -88,12 +88,10 @@
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/btnTime"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/results"
         app:layout_constraintStart_toEndOf="@+id/btnTime"
         app:layout_constraintTop_toTopOf="@+id/btnTime">
 
@@ -118,6 +116,44 @@
             android:layout_height="wrap_content"
             android:gravity="center|bottom"
             android:text="@string/courses"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/results"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+
+        android:gravity="center"
+        android:orientation="vertical"
+
+        app:layout_constraintBottom_toBottomOf="@+id/courses"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/courses"
+        app:layout_constraintTop_toTopOf="@+id/courses">
+
+
+        <ImageView
+            android:id="@+id/iresults"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+
+            android:layout_marginRight="8dp"
+            android:background="@drawable/result_button_selector"
+            android:state_selected="false"
+            android:text="Courses"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|bottom"
+            android:text="@string/grade"
             android:textSize="10dp" />
     </LinearLayout>
 

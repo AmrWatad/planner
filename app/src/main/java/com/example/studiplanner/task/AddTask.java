@@ -2,14 +2,19 @@ package com.example.studiplanner.task;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -23,6 +28,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.view.MotionEventCompat;
 
 import com.example.studiplanner.DatePickerFragment;
 import com.example.studiplanner.R;
@@ -191,6 +197,8 @@ public class AddTask extends AppCompatActivity {
 
     }
     Date dateformat = null;
+    private Rect mRect = new Rect();
+
     DatePickerDialog.OnDateSetListener onDate = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -220,5 +228,33 @@ public class AddTask extends AppCompatActivity {
             return 1;
         }
     }
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        final int action = MotionEventCompat.getActionMasked(ev);
+/*************
+ * this code is perfect for hide keybored
+ *
+ *
+ *
+ * ********/
+        // mSpinnerAroundMe.setBackgroundColor(Color.parseColor("#00000000"));
 
+        int[] location = new int[2];
+        course.getLocationOnScreen(location);
+        mRect.left = location[0];
+        mRect.top = location[1];
+        mRect.right = location[0] + date.getWidth();
+        mRect.bottom = location[1] + date.getHeight();
+
+        int x = (int) ev.getX();
+        int y = (int) ev.getY();
+
+        if (action == MotionEvent.ACTION_DOWN && !mRect.contains(x, y)) {
+            InputMethodManager input = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            input.hideSoftInputFromWindow(date.getWindowToken(), 0);
+        }
+        date.setInputType(InputType.TYPE_NULL);
+
+        return super.dispatchTouchEvent(ev);
+    }
 }

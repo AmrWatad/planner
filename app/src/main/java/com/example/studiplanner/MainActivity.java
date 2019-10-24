@@ -16,9 +16,12 @@ import android.widget.Toast;
 
 import com.example.studiplanner.course.CourseView;
 import com.example.studiplanner.fragments.Courses;
+import com.example.studiplanner.fragments.Results;
 import com.example.studiplanner.fragments.Tasks;
 import com.example.studiplanner.fragments.TimeTable;
 import com.example.studiplanner.task.TaskView;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -29,8 +32,8 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    private LinearLayout btnTasks, btnTime, btnCourses;
-    private ImageView ibtnTasks, ibtnTime, ibtnCourses;
+    private LinearLayout btnTasks, btnTime, btnCourses,btnResults;
+    private ImageView ibtnTasks, ibtnTime, ibtnCourses,iresults;
     private Fragment mContent;
     SharedPreferences mPrefs;
     public static List<CourseView> courses  = new ArrayList<>();
@@ -49,9 +52,10 @@ public class MainActivity extends AppCompatActivity {
         prefsEditor.putString("tasks_done", arrayToString(tasks_done));
         prefsEditor.putString("textViews", arrayToString(textViews));
         prefsEditor.commit();
-        Intent intent = new Intent(this, NotificationService.class);
+        //todo: notification's
+        /*Intent intent = new Intent(this, NotificationService.class);
         intent.putExtra("courses",arrayToString(courses));
-        startService(intent);
+        startService(intent);*/
     }
 
     @Override
@@ -76,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
         ibtnTasks = findViewById(R.id.ibtnTasks);
         ibtnTime = findViewById(R.id.ibtnTime);
         ibtnCourses = findViewById(R.id.icourses);
+        iresults = findViewById(R.id.iresults);
+        btnResults = findViewById(R.id.results);
         setSelected(1);
 
         Tasks homeFragment = new Tasks();
@@ -105,10 +111,21 @@ public class MainActivity extends AppCompatActivity {
         });
         btnCourses.setOnClickListener(v -> {
             setSelected(3);
-            getSupportFragmentManager().
+              getSupportFragmentManager().
                     beginTransaction().
                     replace(R.id.container, new Courses()).
                     commit();
+
+
+        });
+        btnResults.setOnClickListener(v -> {
+            setSelected(4);
+            getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.container, new Results()).
+                    commit();
+
+
         });
     }
 
@@ -148,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
         ibtnTasks.setSelected(false);
         ibtnTime.setSelected(false);
         ibtnCourses.setSelected(false);
+        iresults.setSelected(false);
 
         switch (i) {
             case 1:
@@ -159,15 +177,18 @@ public class MainActivity extends AppCompatActivity {
             case 3:
                 ibtnCourses.setSelected(true);
                 break;
+            case 4:
+                iresults.setSelected(true);
+                break;
         }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Intent intent = new Intent(this, NotificationService.class);
+      /*  Intent intent = new Intent(this, NotificationService.class);
         intent.putExtra("courses",arrayToString(courses));
-        startService(intent);
+        startService(intent);*/
     }
     public static <T> String arrayToString(List<T> list) {
         Gson g = new Gson();

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">studiplanner</string>
+    <string name="app_name">יומן הסטודנט</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="day1">א</string>
     <string name="day2">ב</string>
@@ -8,7 +8,6 @@
     <string name="day4">ד</string>
     <string name="day5">ה</string>
     <string name="day6">ו</string>
-
     <string name="course_name">שם הקורס</string>
     <string name="short_code">Short Code</string>
     <string name="teacher">מרצה</string>
@@ -42,4 +41,6 @@
     <string name="write_task_name">תכתוב שם המשימה</string>
     <string name="not_found">אין משימות מוכנות</string>
     <string name="write_point_of_course">תכתוב כמה נק"ז לקורס!</string>
+    <string name="average">ממוצע: </string>
+
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">studiplanner</string>
+    <string name="app_name">يوميات الطالب</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="day1">أحد</string>
     <string name="day2">أثنين</string>
@@ -41,4 +41,6 @@
     <string name="write_task_name">اكتب اسم المهمة!</string>
     <string name="not_found">لا يوجد مهام جاهزة</string>
     <string name="write_point_of_course">اكتب نقاط(وحدة) للدورة!</string>
+    <string name="average">معدل: </string>
+
 </resources>

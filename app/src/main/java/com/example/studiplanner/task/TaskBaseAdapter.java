@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
@@ -17,6 +18,7 @@ import com.example.studiplanner.R;
 
 import java.util.ArrayList;
 
+import static com.example.studiplanner.MainActivity.tasks;
 import static com.example.studiplanner.MainActivity.tasks_done;
 import static com.example.studiplanner.fragments.Tasks.mListView1;
 //import static com.example.studiplanner.task.BottomSheetFragment.tasks_done;
@@ -29,13 +31,13 @@ public class TaskBaseAdapter extends BaseAdapter {
     CourseViewHolder holder;
     private View popupInputDialogView = null;
     private AlertDialog alertDialog;
-    private CheckBox delete;
 
     public TaskBaseAdapter(Context context, ArrayList<TaskView> items) {
         mDataSource = items;
         this.context = context;
         mInflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
     }
 
     @Override
@@ -58,10 +60,16 @@ public class TaskBaseAdapter extends BaseAdapter {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
-        if (convertView == null) {
+         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.item_task, parent, false);
             holder = new CourseViewHolder();
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                     creatPopUpTask(position);
+
+                }
+            });
             holder.title = convertView.findViewById(R.id.item_task_title);
             holder.isDone = convertView.findViewById(R.id.remove_done_item);
             holder.delete = convertView.findViewById(R.id.checkBox);
@@ -100,14 +108,39 @@ public class TaskBaseAdapter extends BaseAdapter {
     private void creatPopUp(int position, CheckBox checkBox) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setCancelable(true);
-        initPopupViewControls(position, checkBox);
-        alertDialogBuilder.setView(popupInputDialogView);
+             initPopupViewControls(position, checkBox);
+          alertDialogBuilder.setView(popupInputDialogView);
         alertDialog = alertDialogBuilder.create();
         alertDialog.show();
         alertDialog.setOnDismissListener(dialog -> {
             checkBox.setChecked(false);
             /* code goes here */
         });
+    }
+
+    private void creatPopUpTask(int position ) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+        alertDialogBuilder.setCancelable(true);
+
+            initPopupViewControls_view(position);
+        alertDialogBuilder.setView(popupInputDialogView);
+        alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
+    }
+
+    private void initPopupViewControls_view(int position) {
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
+        popupInputDialogView = layoutInflater.inflate(R.layout.item_task_view, null);
+        TextView task_name = popupInputDialogView.findViewById(R.id.text_title);
+        TextView task_details = popupInputDialogView.findViewById(R.id.textView_details);
+        TextView task_couerse = popupInputDialogView.findViewById(R.id.text_course);
+        TextView task_date = popupInputDialogView.findViewById(R.id.text_exam);
+        task_name.setText(tasks.get(position).getName());
+        task_details.setText(tasks.get(position).getDetails());
+        task_couerse.setText(tasks.get(position).getCourse());
+        task_date.setText(tasks.get(position).getDate());
+
     }
 
     private void initPopupViewControls(int position, CheckBox checkBox) {

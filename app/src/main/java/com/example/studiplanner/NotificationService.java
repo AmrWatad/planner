@@ -68,13 +68,14 @@ public class NotificationService extends Service {
     @Override
     public void onCreate() {
         Log.e(TAG, "onCreate");
+        startTimer();
     }
 
     @Override
     public void onDestroy() {
-        Log.e(TAG, "onDestroy");
-        stoptimertask();
-        super.onDestroy();
+       // Log.e(TAG, "onDestroy");
+        //stoptimertask();
+      //  super.onDestroy();
     }
 
     //we are going to use a handler to be able to run in our TimerTask
@@ -89,7 +90,7 @@ public class NotificationService extends Service {
         initializeTimerTask();
 
         //schedule the timer, after the first 5000ms the TimerTask will run every 10000ms
-        timer.schedule(timerTask, 40000000, Your_X_SECS * 1000); //
+        timer.schedule(timerTask, 50000, Your_X_SECS * 1000); //
         //timer.schedule(timerTask, 5000,1000); //
     }
 
@@ -132,7 +133,7 @@ public class NotificationService extends Service {
                                         System.out.println("qqqqqqqqqqqqqq  day="+day+", month="+month+", year="+year);
 
                                         System.out.println("??????????="+(cal2.get(Calendar.DAY_OF_MONTH)+1)+", month=" +(cal2.get(Calendar.MONTH)+1));
-                                if ((cal2.get(Calendar.DAY_OF_MONTH)+1 )==(day+3) &&((cal2.get(Calendar.MONTH)+2)==month)){
+                                if ((cal2.get(Calendar.DAY_OF_MONTH)+1 )==(day+3) &&((cal2.get(Calendar.MONTH)+1)==month)){
                                     flag[0] =true;
                                     title[0] =i.getTitle();
                                     examdate[0] =i.getDate();

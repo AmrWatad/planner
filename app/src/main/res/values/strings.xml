@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">studiplanner</string>
+    <string name="app_name">Student Diary</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="day1">Mo</string>
     <string name="day2">Tu</string>
@@ -40,4 +40,5 @@
     <string name="write_task_name">write task name!</string>
     <string name="not_found">not found</string>
     <string name="write_point_of_course">write points of course  !</string>
+    <string name="average">average:</string>
 </resources>

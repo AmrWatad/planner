@@ -50,9 +50,10 @@ public class Tasks extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
           v =  inflater.inflate(R.layout.fragment_tasks, container, false);
-        initListView();
           constraintLayout=v.findViewById(R.id.cns_task);
         taskName=v.findViewById(R.id.t_task_name);
+        initListView();
+
        /* constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,10 +110,10 @@ public class Tasks extends Fragment {
         mListView1 = v.findViewById(R.id.lv_tasks);
          adapter1 = new TaskBaseAdapter(getActivity(), (ArrayList<TaskView>) tasks/*dataSources*/);
         mListView1.setAdapter(adapter1);
-      /*  mListView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+       /* mListView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(view.getContext(), *//*dataSources*//*tasks.get(i).getName(), Toast.LENGTH_LONG).show();
+                Toast.makeText(view.getContext(), tasks.get(i).getName(), Toast.LENGTH_LONG).show();
                 Bundle bundle = new Bundle();
                 bundle.putString("msg", "edit");
                 bundle.putInt("position", i);
@@ -120,27 +121,16 @@ public class Tasks extends Fragment {
                 in.putExtra("xy", bundle);
                 startActivity(in);
             }
-        });*/
+        });
+*/
+        mListView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Toast.makeText(getContext(),tasks.get(i).getName(),Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
 
-   /*  private static List<TaskView> loadMovies() {
-
-
-        tasks.add(new TaskView("Jurassic World - 111111111111"));
-        tasks.add(new TaskView("Jurassic World - 22222222222"   ));
-        tasks.add(new TaskView("Jurassic World - 3333333333 Kingdom" ));
-        tasks.add(new TaskView("Jurassic World - 4444444 Kingdom" ));
-        tasks.add(new TaskView("Jurassic World - 55555555555 Kingdom" ));
-        tasks.add(new TaskView("Jurassic World - 66666666666 Kingdom" ));
-        tasks.add(new TaskView("Jurassic World - 77777777 Kingdom" ));
-        tasks.add(new TaskView("Jurassic World - 111111111111"));
-        tasks.add(new TaskView("Jurassic World - 22222222222"));
-        tasks.add(new TaskView("Jurassic World - 3333333333 Kingdom"));
-        tasks.add(new TaskView("Jurassic World - 4444444 Kingdom"));
-        tasks.add(new TaskView("Jurassic World - 55555555555 Kingdom"));
-        tasks.add(new TaskView("Jurassic World - 66666666666 Kingdom"));
-        tasks.add(new TaskView("Jurassic World - 77777777 Kingdom"));
-        return tasks;
-    }*/
 }

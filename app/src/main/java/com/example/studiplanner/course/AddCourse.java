@@ -2,12 +2,18 @@ package com.example.studiplanner.course;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MotionEventCompat;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -147,7 +153,37 @@ public class AddCourse extends AppCompatActivity {
         }
     }
     Date dateformat = null;
+    private Rect mRect = new Rect();
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        final int action = MotionEventCompat.getActionMasked(ev);
+/*************
+ * this code is perfect for hide keybored
+ *
+ *
+ *
+ * ********/
+        // mSpinnerAroundMe.setBackgroundColor(Color.parseColor("#00000000"));
+
+        int[] location = new int[2];
+        course.getLocationOnScreen(location);
+        mRect.left = location[0];
+        mRect.top = location[1];
+        mRect.right = location[0] + date.getWidth();
+        mRect.bottom = location[1] + date.getHeight();
+
+        int x = (int) ev.getX();
+        int y = (int) ev.getY();
+
+        if (action == MotionEvent.ACTION_DOWN && !mRect.contains(x, y)) {
+            InputMethodManager input = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            input.hideSoftInputFromWindow(date.getWindowToken(), 0);
+        }
+        date.setInputType(InputType.TYPE_NULL);
+
+        return super.dispatchTouchEvent(ev);
+    }
     DatePickerDialog.OnDateSetListener onDate = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
