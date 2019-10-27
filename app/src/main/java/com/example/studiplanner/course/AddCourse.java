@@ -1,9 +1,5 @@
 package com.example.studiplanner.course;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.MotionEventCompat;
-
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +16,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MotionEventCompat;
+
 import com.example.studiplanner.DatePickerFragment;
 import com.example.studiplanner.R;
 
@@ -29,8 +29,9 @@ import java.util.Date;
 
 import static com.example.studiplanner.MainActivity.courses;
 import static com.example.studiplanner.fragments.Courses.adapter;
-//import static com.example.studiplanner.fragments.Courses.courses;
 import static com.example.studiplanner.fragments.Courses.mListView;
+
+//import static com.example.studiplanner.fragments.Courses.courses;
 
 public class AddCourse extends AppCompatActivity {
         EditText course,shortCode,techer,location,details,rating,grade,points;
