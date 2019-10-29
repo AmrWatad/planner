@@ -69,7 +69,14 @@ public class TimeTable extends Fragment {
                  times= Arrays.asList("8:00-\n10:00","10:00-\n12:00","12:00-\n14:00","14:00-\n16:00",
                         "16:00-\n17:00","17:00-\n18:00","18:00-\n19:00","19:00-\n20:00","20:00-\n21:00","21:00-\n22:00");//,"10:00-12:00","10:00-12:00","10:00-12:00");
                 times.get(1);
-                table_numbers= !switchgit.isOn();
+                if(switchgit.isOn()){
+                    table_numbers=false;
+
+                }
+                else{
+                    table_numbers=true;
+
+                }
                 setTableOrder();
 
             }

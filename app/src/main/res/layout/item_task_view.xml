@@ -4,223 +4,223 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
 
-    <TextView
-        android:id="@+id/text_title"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#F7F7F7"
-        android:gravity="center"
-        android:paddingLeft="20dp"
-        android:paddingRight="10dp"
-        android:text="TextView"
-        android:textColor="#000000"
-        android:textSize="32dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#F7F7F7"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView_teacher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/teacher"
-        android:textColor="#000000"
-        android:visibility="gone"
+        <TextView
+            android:id="@+id/textView_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/teacher"
+            android:textColor="#000000"
+            android:visibility="gone"
 
-        app:layout_constraintStart_toStartOf="@+id/text_title"
-        app:layout_constraintTop_toBottomOf="@+id/text_title" />
+            app:layout_constraintStart_toStartOf="@+id/text_title"
+            app:layout_constraintTop_toBottomOf="@+id/text_title" />
 
-    <TextView
-        android:id="@+id/text_teacher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:text="TextView"
-        android:visibility="gone"
+        <TextView
+            android:id="@+id/text_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:text="TextView"
+            android:visibility="gone"
 
-        app:layout_constraintBottom_toBottomOf="@+id/textView_teacher"
-        app:layout_constraintStart_toEndOf="@+id/textView_teacher" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView_teacher"
+            app:layout_constraintStart_toEndOf="@+id/textView_teacher" />
 
-    <TextView
-        android:id="@+id/textView_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="32dp"
+        <TextView
+            android:id="@+id/textView_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="32dp"
 
-        android:text="@string/course"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/textView_teacher"
-        app:layout_constraintTop_toBottomOf="@+id/textView_teacher" />
-    <TextView
-        android:id="@+id/text_course"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_location"
-        app:layout_constraintStart_toEndOf="@+id/textView_location" />
+            android:text="@string/course"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@+id/textView_teacher"
+            app:layout_constraintTop_toBottomOf="@+id/textView_teacher" />
+        <TextView
+            android:id="@+id/text_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_location"
+            app:layout_constraintStart_toEndOf="@+id/textView_location" />
 
-    <TextView
-        android:id="@+id/textView_details"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:paddingRight="20dp"
-        android:text="@string/details"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView_location"
-        app:layout_constraintTop_toBottomOf="@+id/textView_location" />
+        <TextView
+            android:id="@+id/textView_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:paddingRight="20dp"
+            android:text="@string/details"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_location"
+            app:layout_constraintTop_toBottomOf="@+id/textView_location" />
 
-    <TextView
-        android:id="@+id/textView_grade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/grade"
-        android:textColor="#000000"
-        android:visibility="gone"
+        <TextView
+            android:id="@+id/textView_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/grade"
+            android:textColor="#000000"
+            android:visibility="gone"
 
-        app:layout_constraintStart_toStartOf="@+id/textView_details"
-        app:layout_constraintTop_toBottomOf="@+id/textView_details" />
-    <TextView
-        android:id="@+id/text_grade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="@+id/textView_grade"
-        app:layout_constraintStart_toEndOf="@+id/textView_grade" />
+            app:layout_constraintStart_toStartOf="@+id/textView_details"
+            app:layout_constraintTop_toBottomOf="@+id/textView_details" />
+        <TextView
+            android:id="@+id/text_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="@+id/textView_grade"
+            app:layout_constraintStart_toEndOf="@+id/textView_grade" />
 
-    <TextView
-        android:id="@+id/textView_points"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:text="@string/points"
-        android:textColor="#000000"
-        android:visibility="gone"
+        <TextView
+            android:id="@+id/textView_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:text="@string/points"
+            android:textColor="#000000"
+            android:visibility="gone"
 
-        app:layout_constraintBottom_toBottomOf="@+id/text_grade"
-        app:layout_constraintStart_toEndOf="@+id/text_grade" />
+            app:layout_constraintBottom_toBottomOf="@+id/text_grade"
+            app:layout_constraintStart_toEndOf="@+id/text_grade" />
 
-    <TextView
-        android:id="@+id/text_points"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:text=""
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_points"
-        app:layout_constraintStart_toEndOf="@+id/textView_points" />
+        <TextView
+            android:id="@+id/text_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_points"
+            app:layout_constraintStart_toEndOf="@+id/textView_points" />
 
-    <TextView
-        android:id="@+id/textView_exam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/task_date"
-        android:textColor="#000000"
-         android:layout_marginBottom="30dp"
-        android:paddingBottom="30dp"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="@+id/textView_grade"
-        app:layout_constraintTop_toBottomOf="@+id/textView_grade" />
+        <TextView
+            android:id="@+id/textView_exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/task_date"
+            android:textColor="#000000"
+            android:layout_marginBottom="30dp"
+            android:paddingBottom="30dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/textView_grade"
+            app:layout_constraintTop_toBottomOf="@+id/textView_grade" />
 
-    <TextView
-        android:id="@+id/text_exam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:text=""
-        android:layout_marginBottom="30dp"
+        <TextView
+            android:id="@+id/text_exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:text=""
+            android:layout_marginBottom="30dp"
 
-        app:layout_constraintBottom_toBottomOf="@+id/textView_exam"
-        app:layout_constraintStart_toEndOf="@+id/textView_exam" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView_exam"
+            app:layout_constraintStart_toEndOf="@+id/textView_exam" />
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:background="#B5B6B8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView_teacher"
-        app:layout_constraintTop_toBottomOf="@+id/textView_teacher" />
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:background="#B5B6B8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_teacher"
+            app:layout_constraintTop_toBottomOf="@+id/textView_teacher" />
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:background="#B5B6B8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView_location"
-        app:layout_constraintTop_toBottomOf="@+id/textView_location" />
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:background="#B5B6B8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_location"
+            app:layout_constraintTop_toBottomOf="@+id/textView_location" />
 
-  <View
-        android:id="@+id/view4"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:background="#B5B6B8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView_details"
-        app:layout_constraintTop_toBottomOf="@+id/textView_details" />
+        <View
+            android:id="@+id/view4"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:background="#B5B6B8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_details"
+            app:layout_constraintTop_toBottomOf="@+id/textView_details" />
 
- <View
-        android:id="@+id/view5"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:background="#B5B6B8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView_grade"
-        app:layout_constraintTop_toBottomOf="@+id/textView_grade" />
+        <View
+            android:id="@+id/view5"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:background="#B5B6B8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_grade"
+            app:layout_constraintTop_toBottomOf="@+id/textView_grade" />
 
-    <View
-        android:id="@+id/view6"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:background="#B5B6B8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView_exam"
-        app:layout_constraintTop_toBottomOf="@+id/textView_exam" />
+        <View
+            android:id="@+id/view6"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:background="#B5B6B8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_exam"
+            app:layout_constraintTop_toBottomOf="@+id/textView_exam" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

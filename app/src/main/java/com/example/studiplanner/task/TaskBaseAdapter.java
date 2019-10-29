@@ -59,13 +59,13 @@ public class TaskBaseAdapter extends BaseAdapter {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-         if (convertView == null) {
+        if (convertView == null) {
             convertView = mInflater.inflate(R.layout.item_task, parent, false);
             holder = new CourseViewHolder();
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                     creatPopUpTask(position);
+                    creatPopUpTask(position);
 
                 }
             });
@@ -107,8 +107,8 @@ public class TaskBaseAdapter extends BaseAdapter {
     private void creatPopUp(int position, CheckBox checkBox) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setCancelable(true);
-             initPopupViewControls(position, checkBox);
-          alertDialogBuilder.setView(popupInputDialogView);
+        initPopupViewControls(position, checkBox);
+        alertDialogBuilder.setView(popupInputDialogView);
         alertDialog = alertDialogBuilder.create();
         alertDialog.show();
         alertDialog.setOnDismissListener(dialog -> {
@@ -121,7 +121,7 @@ public class TaskBaseAdapter extends BaseAdapter {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setCancelable(true);
 
-            initPopupViewControls_view(position);
+        initPopupViewControls_view(position);
         alertDialogBuilder.setView(popupInputDialogView);
         alertDialog = alertDialogBuilder.create();
         alertDialog.show();

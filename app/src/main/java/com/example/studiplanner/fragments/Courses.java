@@ -11,18 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.studiplanner.course.AddCourse;
 import com.example.studiplanner.R;
+import com.example.studiplanner.course.AddCourse;
 import com.example.studiplanner.course.BottomSheetFragment_Course;
 import com.example.studiplanner.course.CourseView;
 import com.example.studiplanner.course.CoursesBaseAdapter;
-import com.example.studiplanner.task.AddTask;
-import com.example.studiplanner.task.BottomSheetFragment;
 import com.github.angads25.toggle.widget.LabeledSwitch;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -30,7 +27,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 import static android.content.ContentValues.TAG;
 import static com.example.studiplanner.MainActivity.courses;
@@ -51,7 +47,7 @@ public class Courses extends Fragment  {
                              Bundle savedInstanceState) {
           v =  inflater.inflate(R.layout.fragment_courses, container, false);
         initListView();
-        Collections.sort(courses, new Courses.CustomComparatorDate());
+        //Collections.sort(courses, new Courses.CustomComparatorDate());
 
         plus=v.findViewById(R.id.fab);
         aSwitch=v.findViewById(R.id.switchgit);

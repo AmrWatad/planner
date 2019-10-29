@@ -154,6 +154,25 @@ public class AddCourse extends AppCompatActivity {
         }
     }
     Date dateformat = null;
+
+    DatePickerDialog.OnDateSetListener onDate = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+            String datet = year + "-" + monthOfYear + "-" +  dayOfMonth+ "";
+
+            try {
+                dateformat       = format.parse ( datet );
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            date.setText(datet);
+
+        }
+    };
     private Rect mRect = new Rect();
 
     @Override
@@ -185,23 +204,4 @@ public class AddCourse extends AppCompatActivity {
 
         return super.dispatchTouchEvent(ev);
     }
-    DatePickerDialog.OnDateSetListener onDate = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int monthOfYear,
-                              int dayOfMonth) {
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-
-            String datet = year + "-" + monthOfYear + "-" +  dayOfMonth+ "";
-
-            try {
-                dateformat       = format.parse ( datet );
-
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            date.setText(datet);
-
-        }
-    };
-
 }

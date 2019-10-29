@@ -16,8 +16,6 @@ import com.example.studiplanner.fragments.Results;
 import com.example.studiplanner.fragments.Tasks;
 import com.example.studiplanner.fragments.TimeTable;
 import com.example.studiplanner.task.TaskView;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -40,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
- //set variables of 'myObject', etc.
+        //set variables of 'myObject', etc.
 
         SharedPreferences.Editor prefsEditor = mPrefs.edit();
         prefsEditor.putString("courses", arrayToString(courses));
@@ -63,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-          mPrefs = this.getPreferences(Context.MODE_PRIVATE);
-           initCourses_SharedPrefrenc(mPrefs);
-           initTasks_SharedPrefrenc(mPrefs);
-           initTasks_done_SharedPrefrenc(mPrefs);
-           initTextViews_SharedPrefrenc(mPrefs);
+        mPrefs = this.getPreferences(Context.MODE_PRIVATE);
+        initCourses_SharedPrefrenc(mPrefs);
+        initTasks_SharedPrefrenc(mPrefs);
+        initTasks_done_SharedPrefrenc(mPrefs);
+        initTextViews_SharedPrefrenc(mPrefs);
 
 
         btnTasks = findViewById(R.id.btnTasks);
@@ -107,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         });
         btnCourses.setOnClickListener(v -> {
             setSelected(3);
-              getSupportFragmentManager().
+            getSupportFragmentManager().
                     beginTransaction().
                     replace(R.id.container, new Courses()).
                     commit();
@@ -154,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         Type listType = new TypeToken<ArrayList<CourseView>>(){}.getType();
         ArrayList<CourseView> arrayList=new Gson().fromJson(json, listType);
         if(arrayList!=null )
-        courses  = arrayList;
+            courses  = arrayList;
     }
 
     private void setSelected(int i) {
@@ -182,9 +180,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-      /*  Intent intent = new Intent(this, NotificationService.class);
-        intent.putExtra("courses",arrayToString(courses));
-        startService(intent);*/
+        SharedPreferences.Editor prefsEditor = mPrefs.edit();
+        prefsEditor.putString("courses", arrayToString(courses));
+        prefsEditor.putString("tasks", arrayToString(tasks));
+        prefsEditor.putString("tasks_done", arrayToString(tasks_done));
+        prefsEditor.putString("textViews", arrayToString(textViews));
+        prefsEditor.commit();
     }
     public static <T> String arrayToString(List<T> list) {
         Gson g = new Gson();

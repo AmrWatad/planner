@@ -51,8 +51,8 @@ import static com.example.studiplanner.fragments.Tasks.mListView1;
 //import static com.example.studiplanner.task.BottomSheetFragment.tasks;
 
 public class AddTask extends AppCompatActivity {
-        EditText task,details;
-        TextView course,date, course_task_View,date_pecker;
+    EditText task,details;
+    TextView course,date, course_task_View,date_pecker;
     FrameLayout save;
     CourseView addingCours;
     private View popupInputDialogView = null;
@@ -71,7 +71,7 @@ public class AddTask extends AppCompatActivity {
         course_task_View =findViewById(R.id.t_course_view);
         date=findViewById(R.id.add_date);
         date_pecker=findViewById(R.id.date);
-          details=findViewById(R.id.e_details);
+        details=findViewById(R.id.e_details);
         save=findViewById(R.id.frame_save);
         course.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,8 +94,8 @@ public class AddTask extends AppCompatActivity {
             int position = bundle.getInt("position");
             TaskView taskView=tasks.get(position);
             task.setText(taskView.getName());
-             details.setText(taskView.getDetails());
-           // Toast.makeText(getBaseContext(),"edit="+position,Toast.LENGTH_LONG).show();
+            details.setText(taskView.getDetails());
+            // Toast.makeText(getBaseContext(),"edit="+position,Toast.LENGTH_LONG).show();
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -119,7 +119,7 @@ public class AddTask extends AppCompatActivity {
             });
         }
         else {
-           // Toast.makeText(getBaseContext(),"noot edit!!",Toast.LENGTH_LONG).show();
+            // Toast.makeText(getBaseContext(),"noot edit!!",Toast.LENGTH_LONG).show();
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -208,7 +208,7 @@ public class AddTask extends AppCompatActivity {
             String date = year + "-" + monthOfYear + "-" +  dayOfMonth+ "";
 
             try {
-                  dateformat       = format.parse ( date );
+                dateformat       = format.parse ( date );
 
             } catch (ParseException e) {
                 e.printStackTrace();
@@ -216,7 +216,7 @@ public class AddTask extends AppCompatActivity {
 
             date_pecker.setText(date);
 
-         }
+        }
     };
     public class CustomComparator implements Comparator<TaskView> {
 
@@ -224,7 +224,7 @@ public class AddTask extends AppCompatActivity {
         @Override
         public int compare(TaskView t1, TaskView t2) {
             if(t1.getDateFormat()!=null&&t2.getDateFormat()!=null)
-            return t1.getDateFormat().compareTo(t2.getDateFormat());
+                return t1.getDateFormat().compareTo(t2.getDateFormat());
             return 1;
         }
     }
@@ -257,4 +257,5 @@ public class AddTask extends AppCompatActivity {
 
         return super.dispatchTouchEvent(ev);
     }
+
 }
