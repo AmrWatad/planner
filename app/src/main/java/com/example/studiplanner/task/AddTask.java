@@ -205,7 +205,7 @@ public class AddTask extends AppCompatActivity {
                               int dayOfMonth) {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
-            String date = year + "-" + monthOfYear + "-" +  dayOfMonth+ "";
+            String date = year + "-" + (monthOfYear+1) + "-" +  dayOfMonth+ "";
 
             try {
                 dateformat       = format.parse ( date );

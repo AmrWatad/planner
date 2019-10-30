@@ -161,7 +161,7 @@ public class AddCourse extends AppCompatActivity {
                               int dayOfMonth) {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
-            String datet = year + "-" + monthOfYear + "-" +  dayOfMonth+ "";
+            String datet = year + "-" + (monthOfYear+1) + "-" +  dayOfMonth+ "";
 
             try {
                 dateformat       = format.parse ( datet );

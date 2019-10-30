@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.crashlytics.android.Crashlytics;
 import com.example.studiplanner.course.CourseView;
 import com.example.studiplanner.fragments.Courses;
 import com.example.studiplanner.fragments.Results;
@@ -23,6 +24,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import io.fabric.sdk.android.Fabric;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -60,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
         mPrefs = this.getPreferences(Context.MODE_PRIVATE);
         initCourses_SharedPrefrenc(mPrefs);

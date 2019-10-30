@@ -40,7 +40,7 @@ public class Results extends Fragment {
 
     private void calcAverage() {
         double points=0;
-        int sumGrads=0;
+        double sumGrads=0;
         for (int i = 0; i < courses.size(); i++) {
             if(courses.get(i).getPoints()!=0){
                 points+=courses.get(i).getPoints();

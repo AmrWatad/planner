@@ -55,7 +55,7 @@
                 android:gravity="left|top"
                 android:hint="@string/points"
 
-                android:inputType="number"
+                android:inputType="number|numberDecimal"
                 android:textColor="#000000"
                 android:textSize="18dp" />
         </com.github.florent37.materialtextfield.MaterialTextField>
